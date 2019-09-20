@@ -1,9 +1,9 @@
 # react-faq-component
 
-![release](https://badgen.net/github/release/binodswain/react-textinput-field)
-![issues](https://badgen.net/github/issues/binodswain/react-textinput-field)
-![license](https://badgen.net/github/license/binodswain/react-textinput-field)
-![last-commit](https://badgen.net/github/last-commit/binodswain/react-textinput-field)
+[![release](https://badgen.net/github/release/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component)
+[![issues](https://badgen.net/github/issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
+[![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
+[![last-commit](https://badgen.net/github/last-commit/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/commits/)
 
 > React package to render FAQ section
 
