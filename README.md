@@ -3,7 +3,7 @@
 [![release](https://badgen.net/github/release/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component)
 [![issues](https://badgen.net/github/issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
 [![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
-[![last-commit](https://badgen.net/github/last-commit/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/commits/)
+
 
 > React package to render FAQ section
 
@@ -64,7 +64,7 @@ export default class App extends Component {
 ![Screenshot 2](/example/expanded.png?raw=true "expanded state")
 
 ### TODO
-- [ ] Support HTML tags in content section.
+- [x] Support HTML tags in content section.
 
 ## License
 
