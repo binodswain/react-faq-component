@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class rowItem extends Component {
     state = {
@@ -19,7 +19,17 @@ export default class rowItem extends Component {
         const { isExpanded } = this.state;
         
         const attrs = {
-            onClick: this.expand
+            onClick: this.expand,
+            "role": "button",
+            "aria-expanded": isExpanded,
+            "aria-controls": `react-faq-rowcontent-${this.props.rowid}`
+        }
+
+        const contentAttrs = {
+            "role": "region",
+            "id": `react-faq-rowcontent-${this.props.rowid}`,
+            "aria-expanded": isExpanded,
+            "aria-hidden": !isExpanded
         }
 
         const className = [
@@ -31,14 +41,12 @@ export default class rowItem extends Component {
             <section className="faq-row">
                 <div className={className} {...attrs} role="button">
                     <div>{title}</div>
-                    <span className="icon-wrapper">
-                        <svg viewBox="0 0 32 32" class="icon icon-chevron-bottom" viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z"/></svg>
+                    <span className="icon-wrapper" aria-hidden="true">
+                        <img className="arrow-image" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4='/>
                     </span>
                 </div>
-                <div className="row-content">
-                    {content}
-                </div>
-
+                <div className="row-content" {...contentAttrs}
+                    dangerouslySetInnerHTML={{ __html: content }}/>
             </section>
         )
     }

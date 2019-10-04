@@ -6,26 +6,18 @@ import styles from './styles.scss';
 
 export default class ExampleComponent extends Component {
     static propTypes = {
-        name: PropTypes.string
+        data: PropTypes.object
     }
 
     constructor(props) {
         super(props);
-        this.state = {
-            expandAll: false
-        }
     }
 
     render() {
-
         const {
             title,
             rows
         } = this.props.data;
-
-        const {
-            expandAll
-        } = this.state;
         
         return (
             <div className="faq-row-wrapper">
@@ -34,7 +26,7 @@ export default class ExampleComponent extends Component {
                 </section>
                 <section className="row-body">
                     {rows.map((row, i) => {
-                        return <FaqRow data={row} key={i}/>
+                        return <FaqRow data={row} key={i} rowid={i+1}/>
                     })}
                 </section>
             </div>
