@@ -64,7 +64,7 @@ export default class App extends Component {
 ![Screenshot 2](/example/expanded.png?raw=true "expanded state")
 
 ### TODO
-- [ ] Support HTML tags in content section.
+- [x] Support HTML tags in content section.
 
 ## License
 
