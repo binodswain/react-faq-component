@@ -25,11 +25,18 @@ const data = {
     }]
 }
 
+const styles = {
+  // bgColor: 'white',
+  titleTextColor: 'blue',
+  rowTitleColor: 'blue',
+  // rowContentColor: 'grey'
+}
+
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Faq data={data}/>
+        <Faq data={data} styles={styles}/>
       </div>
     )
   }

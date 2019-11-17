@@ -1,11 +1,12 @@
 # react-faq-component
 
-[![release](https://badgen.net/github/release/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component)
+[![release](https://badgen.net/npm/v/react-faq-component)](https://www.npmjs.com/package/react-faq-component)
 [![issues](https://badgen.net/github/issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
 [![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
 
 
-> React package to render FAQ section
+React package to render FAQ section.
+[view demo](https://binodswain.github.io/react-faq-component/)
 
 ## Install
 
@@ -46,17 +47,55 @@ const data = {
     }]
 }
 
+const styles = {
+  // bgColor: 'white',
+  titleTextColor: 'blue',
+  rowTitleColor: 'blue',
+  // rowContentColor: 'grey'
+}
+
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Faq data={data}/>
+        <Faq data={data} styles={styles}/>
       </div>
     )
   }
 }
 
 ```
+## `data` props
+The data passed to react-faq-component is an object having below keys(mentioned in the table).
+
+| attribute| type  |optional | details  |
+| ---------|:-----:|:-------:|:---------|
+| title    |String |true     |Text displayed as the title/header of the FAQ section|
+| rows     |Array  |true     |Array of obj containing title and content of each row|
+| styles   |Object |true     |Object that updates default text/bg color            |
+
+## `styles` props format
+`styles` attribute in data is optional and can be used to change text/bg color in FAQ component.
+e.g:
+```js
+const data = {
+  title: ...,
+  rows: [...],
+  styles: {
+    // bgColor: 'white',
+    titleTextColor: 'blue',
+    rowTitleColor: 'blue',
+    // rowContentColor: 'grey'
+  }
+}
+```
+| attribute       | type  |optional |default value | details  |
+| ----------------|:-----:|:-------:|:------------:|:---------|
+| bgColor         |String |true     |white         |changes background color of faq-component|
+| titleTextColor  |String |true     |black         |changes color of FAQ title/header text   |
+| rowTitleColor   |String |true     |black         |changes color of title text of rowItems  |
+| rowContentColor |String |true     |black         |changes color of content text of rowItems|
+
 ## Screenshot
 
 ![Screenshot 1](/example/closed.png?raw=true "closed state")
@@ -65,6 +104,7 @@ export default class App extends Component {
 
 ### TODO
 - [x] Support HTML tags in content section.
+- [x] Pass value to change text color.
 
 ## License
 
