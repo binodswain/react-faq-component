@@ -1,23 +1,17 @@
+$default-color: black;
+$white: white; 
+
 .faq-row-wrapper {
+    background-color: var(--faq-bg-color, $white);
     h2 {
         margin: 0;
+        color: var(--title-text-color, $default-color);
     }
     .faq-row {
         display: flex;
         justify-content: space-between;
         padding: 10px 0;
         border-bottom: 1px solid #ccc;
-
-        .button {
-            &.main-button {
-                background-color: transparent;
-                color: blue;
-                margin: 0;
-                border: 0;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        }
     }
 
     .row-body {
@@ -28,7 +22,7 @@
                 padding: 10px 0;
                 display: flex;
                 justify-content: space-between;
-                color: blue;
+                color: var(--row-title-color, $default-color);
                 font-weight: 400;
                 letter-spacing: 0.25px;
                 cursor: pointer;
@@ -38,7 +32,6 @@
                     max-height: 20px;
                     margin: 0;
                     padding: 0;
-                    fill: blue;
 
                     .arrow-image {
                         width: 100%;
@@ -69,6 +62,10 @@
                        transition: transform 0.12s ease-in-out;
                     }
                 }
+            }
+
+            .row-content {
+                color: var(--row-content-color, $default-color);
             }
         }
     }
