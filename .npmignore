@@ -5,3 +5,5 @@ webpack.config.js
 .gitignore
 README.md
 node_modules/
+coverage
+docs
