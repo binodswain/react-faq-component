@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import FaqRow from "./rowItem";
 
 import './styles.scss';
 
-export default class FaqComponent extends Component {
+class FaqComponent extends PureComponent {
     static propTypes = {
         data: PropTypes.object
-    }
-
-    constructor(props) {
-        super(props);
     }
 
     render() {
         const {
             title,
-            rows=[]
-        } = this.props.data;
+            rows = []
+        } = this.props.data || {};
         const {
             styles = {}
         } = this.props;
@@ -34,13 +30,24 @@ export default class FaqComponent extends Component {
                     <section className="faq-row">
                         <h2>{title}</h2>
                     </section>
-                    :null}
-                <section className="row-body">
-                    {rows.map((row, i) => {
-                        return <FaqRow data={row} key={i} rowid={i+1}/>
-                    })}
-                </section>
+                    : null}
+                {rows.length ? 
+                    <section className="row-body">
+                        {rows.map((row, i) => {
+                            return <FaqRow data={row} key={i} rowid={i+1}/>
+                        })}
+                    </section>
+                    : null}
+                
             </div>
         )
     }
 }
+
+let rootComponent;
+
+if (typeof window !== 'undefined') {
+  rootComponent = FaqComponent
+}
+
+export default rootComponent;

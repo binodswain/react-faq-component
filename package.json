@@ -1,15 +1,22 @@
 {
   "name": "react-faq-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "build/index.js",
   "description": "React package to render collapsible faq sections",
   "scripts": {
     "start": "webpack --mode production --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --verbose ./src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binodswain/react-faq-component.git"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -26,11 +33,14 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.12.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.33.0",

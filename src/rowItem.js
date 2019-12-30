@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class rowItem extends Component {
+export default class rowItem extends PureComponent {
     state = {
         isExpanded: false
     }
