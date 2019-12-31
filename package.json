@@ -2,12 +2,21 @@
   "name": "react-faq-component",
   "version": "1.0.3",
   "main": "build/index.js",
+  "module": "build/index.es.js",
   "description": "React package to render collapsible faq sections",
   "scripts": {
-    "start": "webpack --mode production --watch",
-    "build": "webpack --mode production",
-    "test": "jest --verbose ./src"
+    "test": "jest --verbose ./src",
+    "rollup:build": "rollup -c",
+    "rollup:dev": "rollup -c -w",
+    "clean": "rimraf build dist"
   },
+  "files": [
+    "src",
+    "build",
+    "LICENCE",
+    "package.json",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binodswain/react-faq-component.git"
@@ -30,9 +39,6 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
@@ -41,11 +47,13 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.12.0",
-    "sass-loader": "^7.3.1",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.3",
-    "webpack-dev-server": "^3.7.1"
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3"
   },
   "engines": {
     "node": ">=8",

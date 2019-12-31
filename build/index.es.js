@@ -1,10 +1,5 @@
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = require('react');
-var React__default = _interopDefault(React);
-var PropTypes = _interopDefault(require('prop-types'));
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -194,19 +189,19 @@ function (_PureComponent) {
         "aria-hidden": !isExpanded
       };
       var className = [style['row-title'], style[isExpanded ? 'expanded' : 'closed']].join(' ');
-      return React__default.createElement("section", {
+      return React.createElement("section", {
         className: style["faq-row"]
-      }, React__default.createElement("div", _extends({
+      }, React.createElement("div", _extends({
         className: className
       }, attrs, {
         role: "button"
-      }), React__default.createElement("div", null, title), React__default.createElement("span", {
+      }), React.createElement("div", null, title), React.createElement("span", {
         className: style["icon-wrapper"],
         "aria-hidden": "true"
-      }, React__default.createElement("img", {
+      }, React.createElement("img", {
         className: style["arrow-image"],
         src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4="
-      }))), React__default.createElement("div", _extends({
+      }))), React.createElement("div", _extends({
         className: style["row-content"]
       }, contentAttrs, {
         dangerouslySetInnerHTML: {
@@ -217,7 +212,7 @@ function (_PureComponent) {
   }]);
 
   return rowItem;
-}(React.PureComponent);
+}(PureComponent);
 
 var FaqComponent =
 /*#__PURE__*/
@@ -246,15 +241,15 @@ function (_PureComponent) {
         "--row-title-color": styles.rowTitleColor,
         "--row-content-color": styles.rowContentColor
       };
-      return React__default.createElement("div", {
+      return React.createElement("div", {
         className: style["faq-row-wrapper"],
         style: styleConfig
-      }, title ? React__default.createElement("section", {
+      }, title ? React.createElement("section", {
         className: style["faq-row"]
-      }, React__default.createElement("h2", null, title)) : null, rows.length ? React__default.createElement("section", {
+      }, React.createElement("h2", null, title)) : null, rows.length ? React.createElement("section", {
         className: style["row-body"]
       }, rows.map(function (row, i) {
-        return React__default.createElement(rowItem, {
+        return React.createElement(rowItem, {
           data: row,
           key: i,
           rowid: i + 1
@@ -264,7 +259,7 @@ function (_PureComponent) {
   }]);
 
   return FaqComponent;
-}(React.PureComponent);
+}(PureComponent);
 
 _defineProperty(FaqComponent, "propTypes", {
   data: PropTypes.object
@@ -278,5 +273,5 @@ if (typeof window !== 'undefined') {
 
 var rootComponent$1 = rootComponent;
 
-module.exports = rootComponent$1;
-//# sourceMappingURL=index.js.map
+export default rootComponent$1;
+//# sourceMappingURL=index.es.js.map

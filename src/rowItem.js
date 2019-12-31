@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import style from './styles.scss';
 
 export default class rowItem extends PureComponent {
     state = {
@@ -33,19 +34,19 @@ export default class rowItem extends PureComponent {
         }
 
         const className = [
-            'row-title',
-            isExpanded ? 'expanded' : 'closed'
+            style['row-title'],
+            style[isExpanded ? 'expanded' : 'closed']
         ].join(' ');
         
         return (
-            <section className="faq-row">
+            <section className={style["faq-row"]}>
                 <div className={className} {...attrs} role="button">
                     <div>{title}</div>
-                    <span className="icon-wrapper" aria-hidden="true">
-                        <img className="arrow-image" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4='/>
+                    <span className={style["icon-wrapper"]} aria-hidden="true">
+                        <img className={style["arrow-image"]} src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4='/>
                     </span>
                 </div>
-                <div className="row-content" {...contentAttrs}
+                <div className={style["row-content"]} {...contentAttrs}
                     dangerouslySetInnerHTML={{ __html: content }}/>
             </section>
         )
