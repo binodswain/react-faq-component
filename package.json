@@ -8,7 +8,8 @@
     "test": "jest --verbose ./src",
     "rollup:build": "rollup -c",
     "rollup:dev": "rollup -c -w",
-    "clean": "rimraf build dist"
+    "clean": "rimraf build dist",
+    "build:website": "cd website && npm run build"
   },
   "files": [
     "src",

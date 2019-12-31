@@ -1,0 +1,46 @@
+{
+  "name": "react-faq-component-demo",
+  "private": true,
+  "description": "Website to show demo for react-faq-component",
+  "version": "0.0.1",
+  "author": "binodswain",
+  "dependencies": {
+    "babel-plugin-prismjs": "^1.1.1",
+    "babel-preset-gatsby": "^0.2.26",
+    "gatsby": "^2.18.17",
+    "gatsby-image": "^2.2.37",
+    "gatsby-plugin-manifest": "^2.2.34",
+    "gatsby-plugin-offline": "^3.0.30",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-sass": "^2.1.26",
+    "gatsby-plugin-sharp": "^2.3.10",
+    "gatsby-source-filesystem": "^2.1.43",
+    "gatsby-transformer-sharp": "^2.3.9",
+    "node-sass": "^4.13.0",
+    "prismjs": "^1.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-faq-component": "file:..",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binodswain/react-faq-component"
+  }
+}
