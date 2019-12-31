@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/react-faq-component",
   siteMetadata: {
     title: `react-faq-component`,
     description: `React package to render FAQ section.`,
