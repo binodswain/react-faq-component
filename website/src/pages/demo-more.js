@@ -42,7 +42,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-        <SEO title="Demo" />
+        <SEO title="More demos" />
         <Gitfork />
         <h1>More Demos</h1>
         <section className="demo">

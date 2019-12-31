@@ -97,7 +97,7 @@ const IndexPage = () => {
   
   return (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="react-faq-component" />
     <Gitfork />
     <h1>react-faq-component</h1>
     <section className="badges">
