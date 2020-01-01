@@ -6,10 +6,10 @@
   "description": "React package to render collapsible faq sections",
   "scripts": {
     "test": "jest --verbose ./src",
-    "rollup:build": "rollup -c",
-    "rollup:dev": "rollup -c -w",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
     "clean": "rimraf build dist",
-    "build:website": "cd website && npm run build"
+    "site:build": "cd website && npm run build"
   },
   "files": [
     "src",
