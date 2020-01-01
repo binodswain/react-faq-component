@@ -3,7 +3,7 @@
 [![release](https://badgen.net/npm/v/react-faq-component)](https://www.npmjs.com/package/react-faq-component)
 [![issues](https://badgen.net/github/issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
 [![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
-
+[![Build Status](https://travis-ci.com/binodswain/react-faq-component.svg?branch=master)](https://travis-ci.com/binodswain/react-faq-component)
 
 React package to render FAQ section.
 [view demo](https://binodswain.github.io/react-faq-component/)
