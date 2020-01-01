@@ -1,0 +1,7 @@
+language: node_js
+node_js: node
+cache: npm
+script:
+  - npm test
+  - npm run build
+  - npm run site:build
