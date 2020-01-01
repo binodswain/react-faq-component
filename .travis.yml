@@ -4,4 +4,4 @@ cache: npm
 script:
   - npm test
   - npm run build
-  - npm run site:build
+

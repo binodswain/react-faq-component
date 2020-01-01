@@ -9,7 +9,7 @@
     "rollup:build": "rollup -c",
     "rollup:dev": "rollup -c -w",
     "clean": "rimraf build dist",
-    "build:website": "cd website && npm run build"
+    "site:build": "cd website && npm run build"
   },
   "files": [
     "src",
