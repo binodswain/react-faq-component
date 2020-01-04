@@ -12,7 +12,6 @@
     "site:build": "cd website && npm run build"
   },
   "files": [
-    "src",
     "build",
     "LICENCE",
     "package.json",
