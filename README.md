@@ -102,10 +102,6 @@ const data = {
 ***
 ![Screenshot 2](/example/expanded.png?raw=true "expanded state")
 
-### TODO
-- [x] Support HTML tags in content section.
-- [x] Pass value to change text color.
-
 ## License
 
 MIT © [binodswain](https://github.com/binodswain)
