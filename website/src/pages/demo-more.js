@@ -35,10 +35,8 @@ const data = {
 const IndexPage = () => {
   useEffect(() => {
     // call the highlightAll() function to style our code blocks
-    Prism.highlightAll()
-    setShowFlag(true)
-  })
-  const [showFaq, setShowFlag] = useState(false)
+    Prism.highlightAll()    
+  },[])
 
   return (
     <Layout>
@@ -55,12 +53,10 @@ const IndexPage = () => {
                     }} />`}
                 </code>
             </pre>
-           {showFaq ?
-           <Faq data={data} styles={{
+            <Faq data={data} styles={{
                 titleTextColor: "green",
                 rowTitleColor: "mediumseagreen"
                 }} />
-          : null}
             
 
             <h2>View 2:</h2>
@@ -72,12 +68,10 @@ const IndexPage = () => {
                     }} />`}
                 </code>
             </pre>
-            {showFaq ?
             <Faq data={data} styles={{
                 titleTextColor: "green",
                 rowContentColor: "grey"
                 }} />
-            : null}
     </section>
   </Layout>
 )
