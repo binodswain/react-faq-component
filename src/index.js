@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import FaqRow from "./rowItem";
-
 import style from './styles.scss';
 
-class FaqComponent extends PureComponent {
+export default class FaqComponent extends PureComponent {
     static propTypes = {
         data: PropTypes.object
     }
@@ -43,11 +42,3 @@ class FaqComponent extends PureComponent {
         )
     }
 }
-
-let rootComponent;
-
-if (typeof window !== 'undefined') {
-  rootComponent = FaqComponent
-}
-
-export default rootComponent;
