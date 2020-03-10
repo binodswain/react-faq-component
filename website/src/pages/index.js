@@ -91,9 +91,7 @@ const IndexPage = () => {
   useEffect(() => {
     // call the highlightAll() function to style our code blocks
     Prism.highlightAll()
-    setShowFlag(true)
-  })
-  const [showFaq, setShowFlag] = useState(false)
+  },[])
   
   return (
   <Layout>
@@ -122,9 +120,7 @@ const IndexPage = () => {
       <h2>Demo</h2>
       
       <h4>default view:</h4>
-        {showFaq ? 
-          <Faq data={data} styles={styles} /> :null
-        }
+      <Faq data={data} styles={styles} />
     <Link to={'/demo-more'}>More demo</Link>
       
     </section>
