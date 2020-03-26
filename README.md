@@ -57,11 +57,16 @@ const styles = {
     // arrowColor: "red",
 };
 
+const config = {
+    animate: true,
+    // arrowIcon: "V",
+};
+
 export default class App extends Component {
     render() {
         return (
             <div>
-                <Faq data={data} styles={styles} />
+                <Faq data={data} styles={styles} config={config} />
             </div>
         );
     }
