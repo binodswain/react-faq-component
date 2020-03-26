@@ -1,23 +1,49 @@
 import React, { PureComponent } from 'react';
 import style from './styles.scss';
+import arrow_down from "./assets/arrow_down.svg";
+
+// const ref = React.createRef();
 
 export default class rowItem extends PureComponent {
     state = {
-        isExpanded: false
+        isExpanded: false,
+        ref: React.createRef(),
+        height: 0
     }
 
     expand = () => {
+        const {
+            config: {
+                animate
+            } = {}
+        } = this.props;
+
         this.setState(prevState => {
             return { isExpanded: !prevState.isExpanded };
-        });
+        }, animate ? this.setHeight: undefined);
+    }
+
+    setHeight = () => {
+        setTimeout(() => {
+            const { ref, isExpanded } = this.state;
+            this.setState({
+                height: isExpanded ? ref.current.scrollHeight : 0
+            })
+        }, 1)
     }
 
     render() {
         const {
-            title, content
-        } = this.props.data;
+            data: {
+                title, content
+            }, 
+            config: {
+                animate,
+                arrowIcon
+            } = {}
+        } = this.props;
 
-        const { isExpanded } = this.state;
+        const { isExpanded, ref, height } = this.state;
         
         const attrs = {
             onClick: this.expand,
@@ -30,23 +56,36 @@ export default class rowItem extends PureComponent {
             "role": "region",
             "id": `react-faq-rowcontent-${this.props.rowid}`,
             "aria-expanded": isExpanded,
-            "aria-hidden": !isExpanded
+            "aria-hidden": !isExpanded,
+        }
+
+        if (animate) {
+            contentAttrs['style'] = {
+                height
+            }
         }
 
         const className = [
             style['row-title'],
             style[isExpanded ? 'expanded' : 'closed']
         ].join(' ');
+
+        const icon = arrowIcon || <div dangerouslySetInnerHTML={{ __html: arrow_down }} className={style["arrow-image"]} alt="Expand arrow" />
         
+        const contentClasses = [
+            style["row-content"],
+            animate ? style["animate"]: style["static"]
+        ].join(' ');
+
         return (
             <section className={style["faq-row"]}>
                 <div className={className} {...attrs} role="button">
                     <div>{title}</div>
                     <span className={style["icon-wrapper"]} aria-hidden="true">
-                        <img className={style["arrow-image"]} src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4='/>
+                        {icon}
                     </span>
                 </div>
-                <div className={style["row-content"]} {...contentAttrs}
+                <div className={contentClasses} {...contentAttrs} ref={ref}
                     dangerouslySetInnerHTML={{ __html: content }}/>
             </section>
         )

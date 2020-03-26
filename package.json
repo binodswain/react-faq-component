@@ -1,71 +1,73 @@
 {
-  "name": "react-faq-component",
-  "version": "1.0.4",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "description": "React package to render collapsible faq sections",
-  "scripts": {
-    "test": "jest --verbose ./src",
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "clean": "rimraf build dist",
-    "site:build": "cd website && npm run build"
-  },
-  "files": [
-    "build",
-    "LICENCE",
-    "package.json",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/binodswain/react-faq-component.git"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
-  },
-  "peerDependencies": {
-    "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.9.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.12.0",
-    "prop-types": "^15.5.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.12.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^1.27.14",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^2.0.3"
-  },
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
-  },
-  "keywords": [
-    "react",
-    "faq",
-    "accordion",
-    "collapsible",
-    "questions"
-  ],
-  "author": "“Binod <binodkumarswain94@gmail.com> (binodswain@github.io)",
-  "license": "MIT"
+    "name": "react-faq-component",
+    "version": "1.0.5",
+    "main": "build/index.js",
+    "module": "build/index.es.js",
+    "description": "React package to render collapsible faq sections",
+    "scripts": {
+        "test": "jest --verbose ./src",
+        "build": "rollup -c",
+        "start": "rollup -c -w",
+        "clean": "rimraf build dist",
+        "site:build": "cd website && npm run build"
+    },
+    "files": [
+        "build",
+        "LICENCE",
+        "package.json",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/binodswain/react-faq-component.git"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+            ".+\\.(svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+        }
+    },
+    "peerDependencies": {
+        "prop-types": "^15.5.4",
+        "react": "^15.0.0 || ^16.0.0",
+        "react-dom": "^15.0.0 || ^16.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-react": "^7.0.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^24.9.0",
+        "jest-transform-stub": "^2.0.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.12.0",
+        "prop-types": "^15.5.4",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-test-renderer": "^16.12.0",
+        "rimraf": "^3.0.0",
+        "rollup": "^1.27.14",
+        "rollup-plugin-babel": "^4.3.3",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-peer-deps-external": "^2.2.0",
+        "rollup-plugin-postcss": "^2.0.3",
+        "rollup-plugin-svg": "^2.0.0"
+    },
+    "engines": {
+        "node": ">=8",
+        "npm": ">=5"
+    },
+    "keywords": [
+        "react",
+        "faq",
+        "accordion",
+        "collapsible",
+        "questions"
+    ],
+    "author": "“Binod <binodkumarswain94@gmail.com> (binodswain@github.io)",
+    "license": "MIT"
 }
