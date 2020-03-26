@@ -1,5 +1,5 @@
 $default-color: black;
-$white: white; 
+$white: white;
 
 .faq-row-wrapper {
     background-color: var(--faq-bg-color, $white);
@@ -15,7 +15,7 @@ $white: white;
     }
 
     .row-body {
-        .faq-row{
+        .faq-row {
             flex-direction: column;
 
             .row-title {
@@ -33,15 +33,21 @@ $white: white;
                     max-height: 25px;
                     margin: 0;
                     padding: 0;
+                    color: var(--arrow-color, $default-color);
 
-                    .arrow-image, svg {
+                    .arrow-image,
+                    svg {
                         width: 100%;
                         height: 100%;
+                    }
+
+                    svg {
+                        fill: var(--arrow-color, $default-color);
                     }
                 }
 
                 &.closed {
-                    +.row-content {
+                    + .row-content {
                         visibility: hidden;
                         z-index: -1;
                         &.animate {
@@ -55,13 +61,13 @@ $white: white;
                     }
 
                     .icon-wrapper {
-                       transform: rotate(0deg);
-                       transition: transform 0.12s;
+                        transform: rotate(0deg);
+                        transition: transform 0.12s;
                     }
                 }
 
                 &.expanded {
-                    +.row-content {
+                    + .row-content {
                         visibility: visible;
                         z-index: 0;
                         &.animate {
@@ -75,8 +81,8 @@ $white: white;
                     }
 
                     .icon-wrapper {
-                       transform: rotate(180deg);
-                       transition: transform 0.12s;
+                        transform: rotate(180deg);
+                        transition: transform 0.12s;
                     }
                 }
             }
