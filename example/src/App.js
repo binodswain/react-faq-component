@@ -32,25 +32,16 @@ const styles = {
   // rowContentColor: 'grey'
 }
 
+const config = {
+  animate: true,
+  arrowIcon: 'V'
+}
+
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Faq data={data} styles={styles} />
-        <br/>
-        <br/>
-        <br/>
-        <Faq data={data} styles={{
-          titleTextColor: "green",
-          rowTitleColor: "mediumseagreen"
-        }} />
-        <br/>
-        <br/>
-        <br/>
-        <Faq data={data} styles={{
-          titleTextColor: "green",
-          rowContentColor: "grey"
-        }} />
+        <Faq data={data} styles={styles} config={config}/>
       </div>
     )
   }

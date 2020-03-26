@@ -14,7 +14,10 @@ export default class FaqComponent extends PureComponent {
             rows = []
         } = this.props.data || {};
         const {
-            styles = {}
+            styles = {},
+            config: {
+                animate
+            } = {}
         } = this.props;
         
         let styleConfig = {
@@ -33,7 +36,7 @@ export default class FaqComponent extends PureComponent {
                 {rows.length ? 
                     <section className={style["row-body"]}>
                         {rows.map((row, i) => {
-                            return <FaqRow data={row} key={i} rowid={i+1}/>
+                            return <FaqRow data={row} key={i} rowid={i+1} config={this.props.config}/>
                         })}
                     </section>
                     : null}
