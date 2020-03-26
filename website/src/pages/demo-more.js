@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Gitfork from "../components/githubFork"
-import Faq from "react-faq-component";
-import Prism from 'prismjs';
-
+import Faq from "react-faq-component"
+import Prism from "prismjs"
 
 const data = {
   title: "FAQ (How it works)",
@@ -27,7 +26,7 @@ const data = {
     },
     {
       title: "What is the package version",
-      content: "v1.0.0",
+      content: "v1.0.5",
     },
   ],
 }
@@ -35,46 +34,93 @@ const data = {
 const IndexPage = () => {
   useEffect(() => {
     // call the highlightAll() function to style our code blocks
-    Prism.highlightAll()    
-  },[])
+    Prism.highlightAll()
+  }, [])
 
   return (
     <Layout>
-        <SEO title="More demos" />
-        <Gitfork />
-        <h1>More Demos</h1>
-        <section className="demo">
-            <h2>View 1:</h2>
-            <pre>
-                <code className="language-jsx">
-                    {`<Faq data={data} styles={{
+      <SEO title="More demos" />
+      <Gitfork />
+      <h1>More Demos</h1>
+      <section className="demo">
+        <h2>View 1 (with animation):</h2>
+        <pre>
+          <code className="language-jsx">
+            {`<Faq data={data} styles={{
                     titleTextColor: "green",
                     rowTitleColor: "mediumseagreen"
                     }} />`}
-                </code>
-            </pre>
-            <Faq data={data} styles={{
-                titleTextColor: "green",
-                rowTitleColor: "mediumseagreen"
-                }} />
-            
+          </code>
+        </pre>
+        <Faq
+          data={data}
+          styles={{
+            titleTextColor: "green",
+            rowTitleColor: "mediumseagreen",
+          }}
+          config={{
+            animate: true,
+          }}
+        />
 
-            <h2>View 2:</h2>
-            <pre>
-                <code className="language-jsx">
-                    {`<Faq data={data} styles={{
+        <h2>View 2 (with animation, custom icon):</h2>
+        <pre>
+          <code className="language-jsx">
+            {`<Faq data={data} styles={{
+                    titleTextColor: "green",
+                    rowTitleColor: "mediumseagreen"
+                    }} />`}
+          </code>
+        </pre>
+        <Faq
+          data={data}
+          styles={{
+            titleTextColor: "green",
+            rowTitleColor: "mediumseagreen",
+            arrowColor: "red",
+          }}
+          config={{
+            animate: true,
+            arrowIcon: "V",
+          }}
+        />
+
+        <h2>View 3:</h2>
+        <pre>
+          <code className="language-jsx">
+            {`<Faq data={data} styles={{
+                    titleTextColor: "green",
+                    rowTitleColor: "mediumseagreen"
+                    }} />`}
+          </code>
+        </pre>
+        <Faq
+          data={data}
+          styles={{
+            titleTextColor: "green",
+            rowTitleColor: "mediumseagreen",
+          }}
+        />
+
+        <h2>View 4:</h2>
+        <pre>
+          <code className="language-jsx">
+            {`<Faq data={data} styles={{
                     titleTextColor: "green",
                     rowContentColor: "grey"
                     }} />`}
-                </code>
-            </pre>
-            <Faq data={data} styles={{
-                titleTextColor: "green",
-                rowContentColor: "grey"
-                }} />
-    </section>
-  </Layout>
-)
+          </code>
+        </pre>
+        <Faq
+          data={data}
+          styles={{
+            titleTextColor: "green",
+            rowContentColor: "grey",
+          }}
+        />
+      </section>
+    </Layout>
+  )
 }
 
 export default IndexPage
