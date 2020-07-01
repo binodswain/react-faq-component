@@ -19,15 +19,20 @@ export default class FaqComponent extends PureComponent {
             "--row-content-color": styles.rowContentColor,
             "--arrow-color": styles.arrowColor,
         };
+
+        const wrapperClass = `faq-row-wrapper ${style["faq-row-wrapper"]}`;
+        const titleClass = `faq-row ${style["faq-row"]}`;
+        const rowlistClass = `row-body ${style["row-body"]}`;
+
         return (
-            <div className={style["faq-row-wrapper"]} style={styleConfig}>
+            <div className={wrapperClass} style={styleConfig}>
                 {title ? (
-                    <section className={style["faq-row"]}>
+                    <section className={titleClass}>
                         <h2>{title}</h2>
                     </section>
                 ) : null}
                 {rows.length ? (
-                    <section className={style["row-body"]}>
+                    <section className={rowlistClass}>
                         {rows.map((row, i) => {
                             return (
                                 <FaqRow
