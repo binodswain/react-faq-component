@@ -21,8 +21,8 @@ export default class FaqComponent extends PureComponent {
         };
 
         const wrapperClass = `faq-row-wrapper ${style["faq-row-wrapper"]}`;
-        const titleClass = `faq-row ${style["faq-row"]}`;
-        const rowlistClass = `row-body ${style["row-body"]}`;
+        const titleClass = `faq-title ${style["faq-row"]}`;
+        const rowlistClass = `faq-body ${style["row-body"]}`;
 
         return (
             <div className={wrapperClass} style={styleConfig}>
