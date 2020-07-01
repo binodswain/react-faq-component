@@ -1,7 +1,7 @@
 # react-faq-component
 
 [![release](https://badgen.net/npm/v/react-faq-component)](https://www.npmjs.com/package/react-faq-component)
-[![issues](https://badgen.net/github/issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
+[![open issues](https://badgen.net/github/open-issues/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/issues)
 [![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/binodswain/react-faq-component.svg?branch=master)](https://travis-ci.com/binodswain/react-faq-component)
 
@@ -58,7 +58,7 @@ const styles = {
 };
 
 const config = {
-    animate: true,
+    // animate: true,
     // arrowIcon: "V",
 };
 
@@ -94,10 +94,10 @@ const config = {
 
 The config passed to react-faq-component is an object having below keys(mentioned in the table).
 
-| attribute |    type    | optional | details                                              |
-| --------- | :--------: | :------: | :--------------------------------------------------- |
-| animate   |  Boolean   |   true   | whether to enable the (row) content animation        |
-| arrowIcon | JSX/string |   true   | custom component to display instead of default arrow |
+| attribute |    type    | optional | details                                                            |
+| --------- | :--------: | :------: | :----------------------------------------------------------------- |
+| animate   |  Boolean   |   true   | whether to enable the (row) content animation (default val : true) |
+| arrowIcon | JSX/string |   true   | custom component to display instead of default arrow               |
 
 ## `styles` props format
 
