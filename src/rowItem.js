@@ -14,7 +14,7 @@ export default class rowItem extends PureComponent {
     expand = () => {
         const {
             config: {
-                animate
+                animate = true
             } = {}
         } = this.props;
 
@@ -38,7 +38,7 @@ export default class rowItem extends PureComponent {
                 title, content
             }, 
             config: {
-                animate,
+                animate = true,
                 arrowIcon
             } = {}
         } = this.props;
@@ -66,22 +66,26 @@ export default class rowItem extends PureComponent {
         }
 
         const className = [
+            'row-title', isExpanded ? 'expanded' : 'closed',
             style['row-title'],
             style[isExpanded ? 'expanded' : 'closed']
         ].join(' ');
 
-        const icon = arrowIcon || <div dangerouslySetInnerHTML={{ __html: arrow_down }} className={style["arrow-image"]} alt="Expand arrow" />
+        const icon = arrowIcon 
+            || <div dangerouslySetInnerHTML={{ __html: arrow_down }} 
+                className={`arrow-image ${style["arrow-image"]}`} 
+                alt="Expand arrow" />
         
         const contentClasses = [
-            style["row-content"],
+            style["row-content"], "row-content",
             animate ? style["animate"]: style["static"]
         ].join(' ');
 
         return (
-            <section className={style["faq-row"]}>
+            <section className={`faq-row ${style["faq-row"]}`}>
                 <div className={className} {...attrs} role="button">
                     <div>{title}</div>
-                    <span className={style["icon-wrapper"]} aria-hidden="true">
+                    <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">
                         {icon}
                     </span>
                 </div>
