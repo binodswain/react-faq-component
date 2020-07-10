@@ -16,7 +16,13 @@ export default class FaqComponent extends PureComponent {
             "--faq-bg-color": styles.bgColor,
             "--title-text-color": styles.titleTextColor,
             "--row-title-color": styles.rowTitleColor,
+            "--row-title-text-size": styles.rowTitleTextSize,
             "--row-content-color": styles.rowContentColor,
+            "--row-content-text-size": styles.rowContentTextSize,
+            "--row-content-padding-top": styles.rowContentPaddingTop,
+            "--row-content-padding-bottom": styles.rowContentPaddingBottom,
+            "--row-content-padding-right": styles.rowContentPaddingRight,
+            "--row-content-padding-left": styles.rowContentPaddingLeft,
             "--arrow-color": styles.arrowColor,
         };
 
