@@ -1,6 +1,6 @@
 {
     "name": "react-faq-component",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "main": "build/index.js",
     "module": "build/index.es.js",
     "description": "React package to render collapsible faq sections",
@@ -43,7 +43,7 @@
         "jest": "^24.9.0",
         "jest-transform-stub": "^2.0.0",
         "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.14.1",
         "prop-types": "^15.5.4",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",

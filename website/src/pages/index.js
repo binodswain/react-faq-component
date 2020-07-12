@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -113,8 +113,8 @@ const IndexPage = () => {
         </a>
         <a href="https://github.com/binodswain/react-faq-component/issues">
           <img
-            src="https://badgen.net/github/issues/binodswain/react-faq-component"
-            alt="issues"
+            src="https://badgen.net/github/open-issues/binodswain/react-faq-component"
+            alt="open-issues"
           />
         </a>
         <a href="https://github.com/binodswain/react-faq-component/blob/master/LICENSE">
