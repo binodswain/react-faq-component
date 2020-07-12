@@ -1,5 +1,7 @@
 $default-color: black;
 $white: white;
+$default-row-title-size: large;
+$default-row-content-size: medium;
 
 .faq-row-wrapper {
     background-color: var(--faq-bg-color, $white);
@@ -24,6 +26,7 @@ $white: white;
                 justify-content: space-between;
                 color: var(--row-title-color, $default-color);
                 font-weight: 400;
+                font-size: var(--row-title-text-size, $default-row-title-size);
                 letter-spacing: 0.25px;
                 cursor: pointer;
                 align-items: center;
@@ -50,6 +53,7 @@ $white: white;
                     + .row-content {
                         visibility: hidden;
                         z-index: -1;
+                        padding: 0 0;
                         &.animate {
                             opacity: 0;
                             transition: height 0.12s, opacity 0.12s;
@@ -70,6 +74,7 @@ $white: white;
                     + .row-content {
                         visibility: visible;
                         z-index: 0;
+                        padding: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0);
                         &.animate {
                             opacity: 1;
                             transition: height 0.12s, opacity 0.12s;
@@ -89,6 +94,7 @@ $white: white;
 
             .row-content {
                 color: var(--row-content-color, $default-color);
+                font-size: var(--row-content-text-size, $default-row-content-size);
             }
         }
     }
