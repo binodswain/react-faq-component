@@ -26,8 +26,12 @@ export default class rowItem extends PureComponent {
     setHeight = () => {
         setTimeout(() => {
             const { ref, isExpanded } = this.state;
+            const height = "calc(" + ref.current.scrollHeight + "px" +
+                " + " + ((this.props.rowContentPaddingTop) ? this.props.rowContentPaddingTop : "0px") +
+                " + " + ((this.props.rowContentPaddingBottom) ? this.props.rowContentPaddingBottom : "0px") +
+                ")";
             this.setState({
-                height: isExpanded ? ref.current.scrollHeight : 0
+                height: isExpanded ? height : 0
             })
         }, 1)
     }
@@ -81,6 +85,10 @@ export default class rowItem extends PureComponent {
             animate ? style["animate"]: style["static"]
         ].join(' ');
 
+        const contentTextClasses = [
+            style["row-content-text"], "row-content-text"
+        ].join(' ');
+
         return (
             <section className={`faq-row ${style["faq-row"]}`}>
                 <div className={className} {...attrs} role="button">
@@ -89,8 +97,10 @@ export default class rowItem extends PureComponent {
                         {icon}
                     </span>
                 </div>
-                <div className={contentClasses} {...contentAttrs} ref={ref}
-                    dangerouslySetInnerHTML={{ __html: content }}/>
+                <div className={contentClasses} {...contentAttrs}>
+                    <div className={contentTextClasses} ref={ref}
+                        dangerouslySetInnerHTML={{ __html: content }}/>
+                </div>
             </section>
         )
     }
