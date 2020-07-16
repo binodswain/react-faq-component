@@ -46,6 +46,8 @@ export default class FaqComponent extends PureComponent {
                                     key={i}
                                     rowid={i + 1}
                                     config={this.props.config}
+                                    rowContentPaddingTop = { styles.rowContentPaddingTop }
+                                    rowContentPaddingBottom = { styles.rowContentPaddingBottom }
                                 />
                             );
                         })}
