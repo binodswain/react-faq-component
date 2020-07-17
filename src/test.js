@@ -16,8 +16,8 @@ describe("React FAQ component", () => {
             },
             {
                 title: "Nunc maximus, magna at ultricies elementum",
-                content: `Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae 
-                    convallis ex tortor sed dolor.`,
+                content: `Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam,
+                 vitae convallis ex tortor sed dolor.`,
             },
             {
                 title: "Can I use html as content",
