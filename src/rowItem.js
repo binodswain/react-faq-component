@@ -1,10 +1,19 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import style from "./styles.scss";
 import arrow_down from "./assets/arrow_down.svg";
 
 // const ref = React.createRef();
 
 export default class rowItem extends PureComponent {
+    static propTypes = {
+        config: PropTypes.object,
+        data: PropTypes.object,
+        rowContentPaddingTop: PropTypes.string,
+        rowContentPaddingBottom: PropTypes.string,
+        rowid: PropTypes.number,
+    };
+
     state = {
         isExpanded: false,
         ref: React.createRef(),
