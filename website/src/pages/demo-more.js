@@ -143,17 +143,16 @@ const IndexPage = () => {
             bgColor: "white",
             titleTextColor: "#48482a",
             rowTitleColor: "#78789a",
-            rowTitleTextSize: 'large',
+            rowTitleTextSize: "large",
             rowContentColor: "#48484a",
-            rowContentTextSize: '16px',
-            rowContentPaddingTop: '10px',
-            rowContentPaddingBottom: '10px',
-            rowContentPaddingLeft: '50px',
-            rowContentPaddingRight: '150px',
+            rowContentTextSize: "16px",
+            rowContentPaddingTop: "10px",
+            rowContentPaddingBottom: "10px",
+            rowContentPaddingLeft: "50px",
+            rowContentPaddingRight: "150px",
             arrowColor: "black",
           }}
         />
-
       </section>
     </Layout>
   )
