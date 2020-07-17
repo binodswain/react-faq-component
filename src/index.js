@@ -6,13 +6,15 @@ import style from "./styles.scss";
 export default class FaqComponent extends PureComponent {
     static propTypes = {
         data: PropTypes.object,
+        styles: PropTypes.object,
+        config: PropTypes.object,
     };
 
     render() {
         const { title, rows = [] } = this.props.data || {};
         const { styles = {}, config: { animate } = {} } = this.props;
 
-        let styleConfig = {
+        const styleConfig = {
             "--faq-bg-color": styles.bgColor,
             "--title-text-color": styles.titleTextColor,
             "--row-title-color": styles.rowTitleColor,
@@ -46,8 +48,8 @@ export default class FaqComponent extends PureComponent {
                                     key={i}
                                     rowid={i + 1}
                                     config={this.props.config}
-                                    rowContentPaddingTop = { styles.rowContentPaddingTop }
-                                    rowContentPaddingBottom = { styles.rowContentPaddingBottom }
+                                    rowContentPaddingTop={styles.rowContentPaddingTop}
+                                    rowContentPaddingBottom={styles.rowContentPaddingBottom}
                                 />
                             );
                         })}

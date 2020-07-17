@@ -124,19 +124,19 @@ const data = {
 }
 ```
 
-| attribute                 |  type  | optional | default value | details                                   |
-| ------------------------- | :----: | :------: | :-----------: | :---------------------------------------- |
-| bgColor                   | String |   true   |     white     | changes background color of faq-component |
-| titleTextColor            | String |   true   |     black     | changes color of FAQ title/header text    |
-| rowTitleColor             | String |   true   |     black     | changes color of title text of rowItems   |
-| rowTitleTextSize          | String |   true   |     large     | changes color of title text of rowItems   |
-| rowContentColor           | String |   true   |     black     | changes color of content text of rowItems |
-| rowContentTextSize        | String |   true   |     medium    | changes color of title text of rowItems   |
-| arrowColor                | String |   true   |     black     | changes color of row arrow                |
-| rowContentPaddingTop      | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingBottom   | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingLeft     | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingRight    | String |   true   |       0       | changes color of title text of rowItems   |
+| attribute               |  type  | optional | default value | details                                   |
+| ----------------------- | :----: | :------: | :-----------: | :---------------------------------------- |
+| bgColor                 | String |   true   |     white     | changes background color of faq-component |
+| titleTextColor          | String |   true   |     black     | changes color of FAQ title/header text    |
+| rowTitleColor           | String |   true   |     black     | changes color of title text of rowItems   |
+| rowTitleTextSize        | String |   true   |     large     | changes color of title text of rowItems   |
+| rowContentColor         | String |   true   |     black     | changes color of content text of rowItems |
+| rowContentTextSize      | String |   true   |    medium     | changes color of title text of rowItems   |
+| arrowColor              | String |   true   |     black     | changes color of row arrow                |
+| rowContentPaddingTop    | String |   true   |       0       | changes color of title text of rowItems   |
+| rowContentPaddingBottom | String |   true   |       0       | changes color of title text of rowItems   |
+| rowContentPaddingLeft   | String |   true   |       0       | changes color of title text of rowItems   |
+| rowContentPaddingRight  | String |   true   |       0       | changes color of title text of rowItems   |
 
 ## Screenshot
 
