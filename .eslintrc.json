@@ -1,0 +1,65 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true,
+        "es6": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "impliedStrict": true,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["react"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "comma-dangle": "off",
+        "comma-spacing": [
+            "error",
+            {
+                "after": true,
+                "before": false
+            }
+        ],
+        "comma-style": ["error", "last"],
+        "semi": "error",
+        "indent": [
+            "error",
+            4,
+            {
+                "flatTernaryExpressions": true,
+                "SwitchCase": 1
+            }
+        ],
+        "jsx-quotes": ["error", "prefer-double"],
+        "no-mixed-spaces-and-tabs": "error",
+        "strict": "error",
+        "max-len": ["error", 100],
+        "prefer-const": "error",
+        "no-console": "error",
+        "no-const-assign": "error",
+        "no-empty": [
+            "error",
+            {
+                "allowEmptyCatch": true
+            }
+        ],
+        "no-undef": "error",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "no-extend-native": "error"
+    }
+}

@@ -4,7 +4,10 @@ import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import svg from 'rollup-plugin-svg';
+import { terser } from "rollup-plugin-terser";
 import pkg from './package.json';
+
+const isProd = process.env.NODE_ENV === "production";
 
 export default {
     input: './src/index.js',
@@ -12,12 +15,12 @@ export default {
         {
             file: pkg.main,
             format: "cjs",
-            sourcemap: true
+            sourcemap: !isProd
         },
         {
             file: pkg.module,
             format: "es",
-            sourcemap: true
+            sourcemap: !isProd
         }
     ],
     plugins: [
@@ -31,5 +34,6 @@ export default {
         }),
         resolve(),
         commonjs(),
+        isProd && terser(),
     ]
 };
