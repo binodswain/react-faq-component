@@ -1,0 +1,15 @@
+{
+    "data": {
+        "placeholderImage": {
+            "childImageSharp": {
+                "fluid": {
+                    "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAAnElEQVQoz6WR0Q6DIAxF+f9f9GEuM3sVFQVH27uLZsa9DUdy0qSBk1vqVAXLMiOleGCGy8fFGNE0N7Rthzt5dE8KlVgVqvsbx8qEO/MM5IxNWC78ykcoInAiRpFSyBoM02QYBkMI9QkLm9B7ge8FPYmLoPQKtcIj4TiuTJUojghjqv6/r4Q5K0WZo4JiYH2VXf0h3Bu6SQC9tOEzb0s5d9QV/JblAAAAAElFTkSuQmCC",
+                    "aspectRatio": 2.6595744680851063,
+                    "src": "/react-faq-component/static/c486398ea7e8be092969149052a88945/31987/ss_1.png",
+                    "srcSet": "/react-faq-component/static/c486398ea7e8be092969149052a88945/e1953/ss_1.png 250w,\n/react-faq-component/static/c486398ea7e8be092969149052a88945/46604/ss_1.png 500w,\n/react-faq-component/static/c486398ea7e8be092969149052a88945/31987/ss_1.png 1000w,\n/react-faq-component/static/c486398ea7e8be092969149052a88945/3dc0e/ss_1.png 1105w",
+                    "sizes": "(max-width: 1000px) 100vw, 1000px"
+                }
+            }
+        }
+    }
+}
