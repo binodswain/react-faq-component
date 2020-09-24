@@ -1,1 +1,93 @@
-{"errors":[],"warnings":["./node_modules/React/cjs/react.production.min.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\React\\cjs\\react.production.min.js\n    Used by 1 module(s), i. e.\n    C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\React\\index.js\n* C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\react\\cjs\\react.production.min.js\n    Used by 1 module(s), i. e.\n    C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\react\\index.js","./node_modules/React/index.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\React\\index.js\n    Used by 6 module(s), i. e.\n    C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\src\\components\\githubFork.js\n* C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\babel-loader\\lib\\index.js??ref--11-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\react\\index.js\n    Used by 146 module(s), i. e.\n    C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\node_modules\\gatsby\\dist\\utils\\babel-loader.js??ref--4-0!C:\\Users\\Binod\\Documents\\codes\\NPM\\react-faq-component\\website\\.cache\\production-app.js"],"namedChunkGroups":{"app":{"chunks":[5,0,2],"assets":["webpack-runtime-e2705fa69179850e23db.js","webpack-runtime-e2705fa69179850e23db.js.map","commons-e8399dc01478231d03df.js","commons-e8399dc01478231d03df.js.map","app-39466da922aaef80ac5d.js","app-39466da922aaef80ac5d.js.map"],"children":{},"childAssets":{}},"component---src-pages-demo-more-js":{"chunks":[1,0,3],"assets":["styles.a2883b0325b8b9b4d12c.css","styles-781716a09a80d4125578.js","styles-781716a09a80d4125578.js.map","commons-e8399dc01478231d03df.js","commons-e8399dc01478231d03df.js.map","component---src-pages-demo-more-js-a96067438cdf105c6bc9.js","component---src-pages-demo-more-js-a96067438cdf105c6bc9.js.map"],"children":{},"childAssets":{}},"component---src-pages-index-js":{"chunks":[1,0,4],"assets":["styles.a2883b0325b8b9b4d12c.css","styles-781716a09a80d4125578.js","styles-781716a09a80d4125578.js.map","commons-e8399dc01478231d03df.js","commons-e8399dc01478231d03df.js.map","component---src-pages-index-js-08f7537f21f705392d75.js","component---src-pages-index-js-08f7537f21f705392d75.js.map"],"children":{},"childAssets":{}}},"assetsByChunkName":{"app":["webpack-runtime-e2705fa69179850e23db.js","commons-e8399dc01478231d03df.js","app-39466da922aaef80ac5d.js"],"component---src-pages-demo-more-js":["styles.a2883b0325b8b9b4d12c.css","styles-781716a09a80d4125578.js","commons-e8399dc01478231d03df.js","component---src-pages-demo-more-js-a96067438cdf105c6bc9.js"],"component---src-pages-index-js":["styles.a2883b0325b8b9b4d12c.css","styles-781716a09a80d4125578.js","commons-e8399dc01478231d03df.js","component---src-pages-index-js-08f7537f21f705392d75.js"]}}
+{
+    "errors": [],
+    "warnings": [],
+    "namedChunkGroups": {
+        "polyfill": {
+            "chunks": [3, 0, 7],
+            "assets": [
+                "webpack-runtime-d8a4de0d8f847a2db596.js",
+                "webpack-runtime-d8a4de0d8f847a2db596.js.map",
+                "commons-c6f1098a0cd1de82209b.js",
+                "commons-c6f1098a0cd1de82209b.js.map",
+                "polyfill-1d7b72fd669edd5b5816.js",
+                "polyfill-1d7b72fd669edd5b5816.js.map"
+            ],
+            "children": {},
+            "childAssets": {}
+        },
+        "app": {
+            "chunks": [3, 1, 0, 4],
+            "assets": [
+                "webpack-runtime-d8a4de0d8f847a2db596.js",
+                "webpack-runtime-d8a4de0d8f847a2db596.js.map",
+                "framework-ac3690fb613cd7838c61.js",
+                "framework-ac3690fb613cd7838c61.js.map",
+                "commons-c6f1098a0cd1de82209b.js",
+                "commons-c6f1098a0cd1de82209b.js.map",
+                "app-b08396ff4a1604499a77.js",
+                "app-b08396ff4a1604499a77.js.map"
+            ],
+            "children": {},
+            "childAssets": {}
+        },
+        "component---src-pages-demo-more-js": {
+            "chunks": [1, 2, 0, 5],
+            "assets": [
+                "framework-ac3690fb613cd7838c61.js",
+                "framework-ac3690fb613cd7838c61.js.map",
+                "styles.8ff2193668da23d39955.css",
+                "styles-2d82ac8e3afc0c213061.js",
+                "styles-2d82ac8e3afc0c213061.js.map",
+                "commons-c6f1098a0cd1de82209b.js",
+                "commons-c6f1098a0cd1de82209b.js.map",
+                "component---src-pages-demo-more-js-ab8a2d328d7954b4783e.js",
+                "component---src-pages-demo-more-js-ab8a2d328d7954b4783e.js.map"
+            ],
+            "children": {},
+            "childAssets": {}
+        },
+        "component---src-pages-index-js": {
+            "chunks": [1, 2, 0, 6],
+            "assets": [
+                "framework-ac3690fb613cd7838c61.js",
+                "framework-ac3690fb613cd7838c61.js.map",
+                "styles.8ff2193668da23d39955.css",
+                "styles-2d82ac8e3afc0c213061.js",
+                "styles-2d82ac8e3afc0c213061.js.map",
+                "commons-c6f1098a0cd1de82209b.js",
+                "commons-c6f1098a0cd1de82209b.js.map",
+                "component---src-pages-index-js-5dbfc1dca1496795ec57.js",
+                "component---src-pages-index-js-5dbfc1dca1496795ec57.js.map"
+            ],
+            "children": {},
+            "childAssets": {}
+        }
+    },
+    "assetsByChunkName": {
+        "polyfill": [
+            "webpack-runtime-d8a4de0d8f847a2db596.js",
+            "commons-c6f1098a0cd1de82209b.js",
+            "polyfill-1d7b72fd669edd5b5816.js"
+        ],
+        "app": [
+            "webpack-runtime-d8a4de0d8f847a2db596.js",
+            "framework-ac3690fb613cd7838c61.js",
+            "commons-c6f1098a0cd1de82209b.js",
+            "app-b08396ff4a1604499a77.js"
+        ],
+        "component---src-pages-demo-more-js": [
+            "framework-ac3690fb613cd7838c61.js",
+            "styles.8ff2193668da23d39955.css",
+            "styles-2d82ac8e3afc0c213061.js",
+            "commons-c6f1098a0cd1de82209b.js",
+            "component---src-pages-demo-more-js-ab8a2d328d7954b4783e.js"
+        ],
+        "component---src-pages-index-js": [
+            "framework-ac3690fb613cd7838c61.js",
+            "styles.8ff2193668da23d39955.css",
+            "styles-2d82ac8e3afc0c213061.js",
+            "commons-c6f1098a0cd1de82209b.js",
+            "component---src-pages-index-js-5dbfc1dca1496795ec57.js"
+        ]
+    }
+}

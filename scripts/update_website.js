@@ -50,7 +50,7 @@ run("npm ci");
 run("npm run clean");
 
 // [website] - build
-run("npm run build");
+run("npm run build-path");
 
 // change working folder
 process.chdir(cwd);
