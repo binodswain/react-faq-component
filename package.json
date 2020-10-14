@@ -13,7 +13,8 @@
         "start": "rollup -c -w",
         "clean": "rimraf build dist",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-        "website": "node ./scripts/update_website.js"
+        "website": "node ./scripts/update_website.js",
+        "release": "standard-version"
     },
     "files": [
         "build",
@@ -43,6 +44,8 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
         "@babel/preset-env": "^7.10.4",
         "@babel/preset-react": "^7.10.4",
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
         "babel-eslint": "^10.1.0",
         "chalk": "^4.1.0",
         "cross-env": "^7.0.2",
@@ -71,7 +74,8 @@
         "rollup-plugin-peer-deps-external": "^2.2.3",
         "rollup-plugin-postcss": "^2.9.0",
         "rollup-plugin-svg": "^2.0.0",
-        "rollup-plugin-terser": "^6.1.0"
+        "rollup-plugin-terser": "^6.1.0",
+        "standard-version": "^9.0.0"
     },
     "engines": {
         "node": ">=8",
@@ -84,7 +88,7 @@
         "collapsible",
         "questions"
     ],
-    "author": "“Binod <binodkumarswain94@gmail.com> (binodswain@github.io)",
+    "author": "Binod <binodkumarswain94@gmail.com> (binodswain@github.io)",
     "license": "MIT",
     "homepage": "https://github.com/binodswain/react-faq-component#readme",
     "lint-staged": {
@@ -97,7 +101,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "commit-message": "commitlint -E HUSKY_GIT_PARAMS"
         }
     }
 }
