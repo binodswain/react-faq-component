@@ -9,6 +9,7 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-faq-component": "file:..",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "^1.1.4"
     },
     "scripts": {

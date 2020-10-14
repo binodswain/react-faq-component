@@ -99,6 +99,18 @@ export default class rowItem extends PureComponent {
         ].join(" ");
 
         const contentTextClasses = [style["row-content-text"], "row-content-text"].join(" ");
+        const rowItem =
+            content && typeof content === "string" ? (
+                <div
+                    className={contentTextClasses}
+                    ref={ref}
+                    dangerouslySetInnerHTML={{ __html: content }}
+                />
+            ) : (
+                <div className={contentTextClasses} ref={ref}>
+                    {content}
+                </div>
+            );
 
         return (
             <section className={`faq-row ${style["faq-row"]}`}>
@@ -109,11 +121,7 @@ export default class rowItem extends PureComponent {
                     </span>
                 </div>
                 <div className={contentClasses} {...contentAttrs}>
-                    <div
-                        className={contentTextClasses}
-                        ref={ref}
-                        dangerouslySetInnerHTML={{ __html: content }}
-                    />
+                    {rowItem}
                 </div>
             </section>
         );
