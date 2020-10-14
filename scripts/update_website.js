@@ -3,6 +3,7 @@ const fsExtra = require("fs-extra");
 const path = require("path");
 const execSync = require("child_process").execSync;
 const chalk = require("chalk");
+// eslint-disable-next-line no-console
 const log = console.log;
 const pkg = require("../package.json");
 
