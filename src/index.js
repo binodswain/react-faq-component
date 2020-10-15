@@ -40,7 +40,7 @@ export default class FaqComponent extends PureComponent {
                     </section>
                 ) : null}
                 {rows.length ? (
-                    <section className={rowlistClass}>
+                    <section className={rowlistClass} role="list">
                         {rows.map((row, i) => {
                             return (
                                 <FaqRow

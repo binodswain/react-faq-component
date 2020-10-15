@@ -132,7 +132,7 @@ export default class rowItem extends PureComponent {
             );
 
         return (
-            <section className={`faq-row ${style["faq-row"]}`}>
+            <section className={`faq-row ${style["faq-row"]}`} role="listitem">
                 <div className={className} {...attrs}>
                     <div>{title}</div>
                     <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">
