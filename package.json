@@ -1,6 +1,6 @@
 {
     "name": "react-faq-component",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "main": "build/index.js",
     "module": "build/index.es.js",
     "description": "React package to render collapsible faq sections",
@@ -14,6 +14,7 @@
         "clean": "rimraf build dist",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
         "website": "node ./scripts/update_website.js",
+        "prerelease": "npm run build",
         "release": "standard-version"
     },
     "files": [
