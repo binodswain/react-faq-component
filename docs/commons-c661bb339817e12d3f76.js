@@ -483,10 +483,10 @@
                 return "object" == typeof e && null !== e && e.$$typeof === a;
             }
             const O = /\/+/g,
-                R = [];
-            function k(e, t, n, r) {
-                if (R.length) {
-                    const o = R.pop();
+                k = [];
+            function R(e, t, n, r) {
+                if (k.length) {
+                    const o = k.pop();
                     return (
                         (o.result = e),
                         (o.keyPrefix = t),
@@ -504,7 +504,7 @@
                 (e.func = null),
                 (e.context = null),
                 (e.count = 0),
-                10 > R.length && R.push(e);
+                10 > k.length && k.push(e);
             }
             function N(e, t, n) {
                 return null == e
@@ -610,7 +610,7 @@
             function L(e, t, n, r, o) {
                 let a = "";
                 null != n && (a = ("" + n).replace(O, "$&/") + "/"),
-                N(e, j, (t = k(t, a, r, o))),
+                N(e, j, (t = R(t, a, r, o))),
                 M(t);
             }
             const G = { current: null };
@@ -634,7 +634,7 @@
                 },
                 forEach: function (e, t, n) {
                     if (null == e) return e;
-                    N(e, I, (t = k(null, null, t, n))), M(t);
+                    N(e, I, (t = R(null, null, t, n))), M(t);
                 },
                 count: function (e) {
                     return N(
@@ -1550,15 +1550,15 @@
                                                             if (m && b != n.tail.prev) {
                                                                 if (
                                                                     ((_.lastIndex = E),
-                                                                    !(R = _.exec(t)))
+                                                                    !(k = _.exec(t)))
                                                                 )
                                                                     break;
                                                                 var P =
-                                                                        R.index +
-                                                                        (h && R[1]
-                                                                            ? R[1].length
+                                                                        k.index +
+                                                                        (h && k[1]
+                                                                            ? k[1].length
                                                                             : 0),
-                                                                    x = R.index + R[0].length,
+                                                                    x = k.index + k[0].length,
                                                                     C = E;
                                                                 for (C += b.value.length; P >= C; )
                                                                     (b = b.next),
@@ -1581,28 +1581,28 @@
                                                                     S++, (C += O.value.length);
                                                                 S--,
                                                                 (A = t.slice(E, C)),
-                                                                (R.index -= E);
+                                                                (k.index -= E);
                                                             } else {
                                                                 _.lastIndex = 0;
-                                                                var R = _.exec(A);
+                                                                var k = _.exec(A);
                                                             }
-                                                            if (R) {
-                                                                h && (w = R[1] ? R[1].length : 0);
-                                                                (P = R.index + w),
-                                                                (R = R[0].slice(w)),
-                                                                (x = P + R.length);
-                                                                let k = A.slice(0, P),
+                                                            if (k) {
+                                                                h && (w = k[1] ? k[1].length : 0);
+                                                                (P = k.index + w),
+                                                                (k = k[0].slice(w)),
+                                                                (x = P + k.length);
+                                                                let R = A.slice(0, P),
                                                                     M = A.slice(x),
                                                                     N = b.prev;
-                                                                k &&
-                                                                    ((N = i(n, N, k)),
-                                                                    (E += k.length)),
+                                                                R &&
+                                                                    ((N = i(n, N, R)),
+                                                                    (E += R.length)),
                                                                 s(n, N, S);
                                                                 const F = new o(
                                                                     p,
-                                                                    g ? r.tokenize(R, g) : R,
+                                                                    g ? r.tokenize(k, g) : k,
                                                                     v,
-                                                                    R,
+                                                                    k,
                                                                     m,
                                                                 );
                                                                 if (
@@ -1871,6 +1871,17 @@
                 };
             }
             const h = {
+                return: 13,
+                arrowLeft: 37,
+                arrowUp: 38,
+                arrowRight: 39,
+                arrowDown: 40,
+                space: 32,
+            };
+            h.keyCodes = Object.keys(h).reduce(function (e, t) {
+                return (e[h[t]] = t), e;
+            }, {});
+            const m = {
                 "faq-row-wrapper": "styles_faq-row-wrapper__3vA1D",
                 "faq-row": "styles_faq-row__2YF3c",
                 "row-body": "styles_row-body__1NvUo",
@@ -1901,7 +1912,7 @@
             })(
                 ".styles_faq-row-wrapper__3vA1D {\n  background-color: var(--faq-bg-color, white); }\n  .styles_faq-row-wrapper__3vA1D h2 {\n    margin: 0;\n    color: var(--title-text-color, black); }\n  .styles_faq-row-wrapper__3vA1D .styles_faq-row__2YF3c {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    border-bottom: 1px solid #ccc; }\n  .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c {\n    flex-direction: column; }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY {\n      padding: 10px 0;\n      display: flex;\n      justify-content: space-between;\n      color: var(--row-title-color, black);\n      font-weight: 400;\n      font-size: var(--row-title-text-size, large);\n      letter-spacing: 0.25px;\n      cursor: pointer;\n      align-items: center; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw {\n        max-width: 25px;\n        max-height: 25px;\n        margin: 0;\n        padding: 0;\n        color: var(--arrow-color, black); }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw .styles_arrow-image__dlV5r,\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          width: 100%;\n          height: 100%; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          fill: var(--arrow-color, black); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd {\n        visibility: hidden;\n        z-index: -1; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_animate__3ecdr {\n          opacity: 0;\n          transition: height 0.12s, opacity 0.12s; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: none; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd .styles_row-content-text__2sgAB {\n          margin: 0 0; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 .styles_icon-wrapper__2cftw {\n        transform: rotate(0deg);\n        transition: transform 0.12s; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd {\n        visibility: visible;\n        z-index: 0; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd.styles_animate__3ecdr {\n          opacity: 1;\n          transition: height 0.12s, opacity 0.12s; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: block; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd .styles_row-content-text__2sgAB {\n          margin: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy .styles_icon-wrapper__2cftw {\n        transform: rotate(180deg);\n        transition: transform 0.12s; }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content-text__2sgAB {\n      color: var(--row-content-color, black);\n      font-size: var(--row-content-text-size, medium); }\n",
             );
-            const m = (function (e) {
+            const w = (function (e) {
                 p(n, r.PureComponent);
                 const t = g(n);
                 function n() {
@@ -1925,6 +1936,14 @@
                                 },
                                 r ? e.setHeight : void 0,
                             );
+                        }),
+                        u(y(e), "keyPress", function (t) {
+                            const n = t.keyCode ? t.keyCode : t.which;
+                            switch (h.keyCodes[n]) {
+                                case "space":
+                                case "return":
+                                    t.preventDefault(), t.stopPropagation(), e.expand();
+                            }
                         }),
                         u(y(e), "setHeight", function () {
                             setTimeout(function () {
@@ -1973,6 +1992,9 @@
                                         "aria-controls": "react-faq-rowcontent-".concat(
                                             this.props.rowid,
                                         ),
+                                        tabIndex: 0,
+                                        onKeyPress: this.keyPress,
+                                        onKeyDown: this.keyPress,
                                     },
                                     _ = {
                                         role: "region",
@@ -1984,52 +2006,55 @@
                                 const g = [
                                         "row-title",
                                         u ? "expanded" : "closed",
-                                        h["row-title"],
-                                        h[u ? "expanded" : "closed"],
+                                        m["row-title"],
+                                        m[u ? "expanded" : "closed"],
                                     ].join(" "),
-                                    m =
+                                    h =
                                         l ||
                                         o.a.createElement("div", {
                                             dangerouslySetInnerHTML: {
                                                 __html:
                                                     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path d="M0 0h24v24H0V0z" fill="none"/></svg>',
                                             },
-                                            className: "arrow-image ".concat(h["arrow-image"]),
+                                            className: "arrow-image ".concat(m["arrow-image"]),
                                             alt: "Expand arrow",
                                         }),
                                     w = [
-                                        h["row-content"],
+                                        m["row-content"],
                                         "row-content",
-                                        s ? h.animate : h.static,
+                                        s ? m.animate : m.static,
                                     ].join(" "),
-                                    v = [h["row-content-text"], "row-content-text"].join(" ");
+                                    v = [m["row-content-text"], "row-content-text"].join(" "),
+                                    T =
+                                        r && "string" == typeof r
+                                            ? o.a.createElement("div", {
+                                                className: v,
+                                                ref: p,
+                                                dangerouslySetInnerHTML: { __html: r },
+                                            })
+                                            : o.a.createElement("div", { className: v, ref: p }, r);
                                 return o.a.createElement(
                                     "section",
-                                    { className: "faq-row ".concat(h["faq-row"]) },
+                                    {
+                                        className: "faq-row ".concat(m["faq-row"]),
+                                        role: "listitem",
+                                    },
                                     o.a.createElement(
                                         "div",
-                                        f({ className: g }, y, { role: "button" }),
+                                        f({ className: g }, y),
                                         o.a.createElement("div", null, n),
                                         o.a.createElement(
                                             "span",
                                             {
                                                 className: "icon-wrapper ".concat(
-                                                    h["icon-wrapper"],
+                                                    m["icon-wrapper"],
                                                 ),
                                                 "aria-hidden": "true",
                                             },
-                                            m,
+                                            h,
                                         ),
                                     ),
-                                    o.a.createElement(
-                                        "div",
-                                        f({ className: w }, _),
-                                        o.a.createElement("div", {
-                                            className: v,
-                                            ref: p,
-                                            dangerouslySetInnerHTML: { __html: r },
-                                        }),
-                                    ),
+                                    o.a.createElement("div", f({ className: w }, _), T),
                                 );
                             },
                         },
@@ -2037,14 +2062,14 @@
                     n
                 );
             })();
-            u(m, "propTypes", {
+            u(w, "propTypes", {
                 config: i.a.object,
                 data: i.a.object,
                 rowContentPaddingTop: i.a.string,
                 rowContentPaddingBottom: i.a.string,
                 rowid: i.a.number,
             });
-            const w = (function (e) {
+            const v = (function (e) {
                 p(n, r.PureComponent);
                 const t = g(n);
                 function n() {
@@ -2080,9 +2105,9 @@
                                             "--row-content-padding-left": l.rowContentPaddingLeft,
                                             "--arrow-color": l.arrowColor,
                                         }),
-                                    f = "faq-row-wrapper ".concat(h["faq-row-wrapper"]),
-                                    p = "faq-title ".concat(h["faq-row"]),
-                                    d = "faq-body ".concat(h["row-body"]);
+                                    f = "faq-row-wrapper ".concat(m["faq-row-wrapper"]),
+                                    p = "faq-title ".concat(m["faq-row"]),
+                                    d = "faq-body ".concat(m["row-body"]);
                                 return o.a.createElement(
                                     "div",
                                     { className: f, style: u },
@@ -2096,9 +2121,9 @@
                                     a.length
                                         ? o.a.createElement(
                                             "section",
-                                            { className: d },
+                                            { className: d, role: "list" },
                                             a.map(function (t, n) {
-                                                return o.a.createElement(m, {
+                                                return o.a.createElement(w, {
                                                     data: t,
                                                     key: n,
                                                     rowid: n + 1,
@@ -2117,8 +2142,8 @@
                     n
                 );
             })();
-            u(w, "propTypes", { data: i.a.object, styles: i.a.object, config: i.a.object }),
-            (t.a = w);
+            u(v, "propTypes", { data: i.a.object, styles: i.a.object, config: i.a.object }),
+            (t.a = v);
         },
         v1p5: function (e, t, n) {
             (function (e) {
@@ -2428,7 +2453,7 @@
                             return (t[s.REACT_TAG_MAP[n] || n] = e[n]), t;
                         }, t);
                     },
-                    R = function (e, t, n) {
+                    k = function (e, t, n) {
                         switch (e) {
                             case s.TAG_NAMES.TITLE:
                                 return {
@@ -2574,15 +2599,15 @@
                         p = void 0 === f ? "" : f,
                         d = e.titleAttributes;
                     return {
-                        base: R(s.TAG_NAMES.BASE, t, r),
-                        bodyAttributes: R(s.ATTRIBUTE_NAMES.BODY, n, r),
-                        htmlAttributes: R(s.ATTRIBUTE_NAMES.HTML, o, r),
-                        link: R(s.TAG_NAMES.LINK, a, r),
-                        meta: R(s.TAG_NAMES.META, i, r),
-                        noscript: R(s.TAG_NAMES.NOSCRIPT, l, r),
-                        script: R(s.TAG_NAMES.SCRIPT, c, r),
-                        style: R(s.TAG_NAMES.STYLE, u, r),
-                        title: R(s.TAG_NAMES.TITLE, { title: p, titleAttributes: d }, r),
+                        base: k(s.TAG_NAMES.BASE, t, r),
+                        bodyAttributes: k(s.ATTRIBUTE_NAMES.BODY, n, r),
+                        htmlAttributes: k(s.ATTRIBUTE_NAMES.HTML, o, r),
+                        link: k(s.TAG_NAMES.LINK, a, r),
+                        meta: k(s.TAG_NAMES.META, i, r),
+                        noscript: k(s.TAG_NAMES.NOSCRIPT, l, r),
+                        script: k(s.TAG_NAMES.SCRIPT, c, r),
+                        style: k(s.TAG_NAMES.STYLE, u, r),
+                        title: k(s.TAG_NAMES.TITLE, { title: p, titleAttributes: d }, r),
                     };
                 }),
                 (t.reducePropsToState = function (e) {
@@ -2690,4 +2715,4 @@
         },
     },
 ]);
-//# sourceMappingURL=commons-c6f1098a0cd1de82209b.js.map
+//# sourceMappingURL=commons-c661bb339817e12d3f76.js.map
