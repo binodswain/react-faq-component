@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import keyboardEvents from "./events";
 import style from "./styles.scss";
 import arrow_down from "./assets/arrow_down.svg";
 
@@ -29,6 +30,21 @@ export default class rowItem extends PureComponent {
             },
             animate ? this.setHeight : undefined,
         );
+    };
+
+    keyPress = (event) => {
+        const code = event.keyCode ? event.keyCode : event.which;
+
+        switch (keyboardEvents.keyCodes[code]) {
+            case "space":
+            case "return":
+                event.preventDefault();
+                event.stopPropagation();
+                this.expand();
+                break;
+            default:
+                break;
+        }
     };
 
     setHeight = () => {
@@ -62,6 +78,9 @@ export default class rowItem extends PureComponent {
             role: "button",
             "aria-expanded": isExpanded,
             "aria-controls": `react-faq-rowcontent-${this.props.rowid}`,
+            tabIndex: 0,
+            onKeyPress: this.keyPress,
+            onKeyDown: this.keyPress,
         };
 
         const contentAttrs = {
@@ -113,8 +132,8 @@ export default class rowItem extends PureComponent {
             );
 
         return (
-            <section className={`faq-row ${style["faq-row"]}`}>
-                <div className={className} {...attrs} role="button">
+            <section className={`faq-row ${style["faq-row"]}`} role="listitem">
+                <div className={className} {...attrs}>
                     <div>{title}</div>
                     <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">
                         {icon}
