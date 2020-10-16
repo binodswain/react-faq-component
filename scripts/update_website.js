@@ -12,7 +12,7 @@ function exec(cmd) {
 }
 
 function run(command) {
-    log(chalk.white.bgBlue.bold(` Started : ${command}`));
+    log(chalk.white.bgBlue.bold(`[info] started - ${command}`));
 
     exec(command, (error, stdout, stderr) => {
         if (error) {
@@ -25,7 +25,7 @@ function run(command) {
         }
     });
 
-    log(chalk.white.bgBlue.bold(` Finished : ${command}`));
+    log(chalk.white.bgBlue.bold(`[info] finished - ${command}`));
     log("\n");
 }
 
@@ -38,11 +38,16 @@ const websiteBuildDir = path.resolve(__dirname + "/../website/public");
 
 fsExtra.emptyDirSync(docsDir);
 
+// pull latest changes from master
+log(chalk.white.bgBlue(`[info] pull latest changes from master`));
+run(`git pull origin master`);
+
 // build package again
 run("npm run build");
 
 // go to website folder
 process.chdir(websiteDir);
+log(chalk.white.bgBlue(`[info] change directory to website`));
 
 // [website] - run clean install
 run("npm ci");
@@ -55,6 +60,7 @@ run("npm run build-path");
 
 // change working folder
 process.chdir(cwd);
+log(chalk.white.bgBlue(`[info] change directory to root`));
 
 // copy build files to docs folder
 fsExtra.copySync(websiteBuildDir, docsDir);
@@ -65,7 +71,7 @@ process.chdir(rootDir);
 // add commit
 run(`git add -- ./docs`);
 
-run(`git commit -m "updating website docs"`);
+run(`git commit -m "docs: update demo website"`);
 
 run(`git push origin master`);
 
