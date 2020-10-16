@@ -12,16 +12,6 @@ import "./layout.css"
 import "./index.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <div
@@ -33,10 +23,6 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          MIT &copy; <a href="https://github.com/binodswain">binodswain</a>{" "}
-          <br />
-        </footer>
       </div>
     </>
   )

@@ -1,5 +1,8 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+
 html {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -200,7 +203,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  /* font-family: georgia, serif; */
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -619,4 +622,48 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+:root {
+  --bg-color: black;
+  --text-color: white;
+  --banner-bg-color: black;
+  --banner-text-color: white;
+  --fork-color: #5000ca;
+}
+
+.dark-theme {
+  --bg-color: black;
+  --text-color: white;
+  --banner-bg-color: black;
+  --banner-text-color: white;
+}
+.light-theme {
+  --bg-color: white;
+  --text-color: black;
+  --banner-bg-color: black;
+  --banner-text-color: white;
+}
+
+.banner-sec {
+  background-color: var(--banner-bg-color);
+  color: var(--banner-text-color);
+  min-height: 25em;
+  margin-bottom: 1.5em;
+}
+
+.banner-sec .banner-text {
+  margin: 2em 0 0;
+}
+
+.footer-sec {
+  background-color: var(--banner-bg-color);
+  color: var(--banner-text-color);
+  padding: 1em 0;
+
+}
+
+.footer-sec a {
+  color: white;
 }
