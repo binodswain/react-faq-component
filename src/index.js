@@ -26,6 +26,7 @@ export default class FaqComponent extends PureComponent {
             "--row-content-padding-right": styles.rowContentPaddingRight,
             "--row-content-padding-left": styles.rowContentPaddingLeft,
             "--arrow-color": styles.arrowColor,
+            "--transition-duration": styles.transitionDuration,
         };
 
         const wrapperClass = `faq-row-wrapper ${style["faq-row-wrapper"]}`;
@@ -48,8 +49,6 @@ export default class FaqComponent extends PureComponent {
                                     key={i}
                                     rowid={i + 1}
                                     config={this.props.config}
-                                    rowContentPaddingTop={styles.rowContentPaddingTop}
-                                    rowContentPaddingBottom={styles.rowContentPaddingBottom}
                                 />
                             );
                         })}

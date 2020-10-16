@@ -2,6 +2,13 @@ $default-color: black;
 $white: white;
 $default-row-title-size: large;
 $default-row-content-size: medium;
+$default-duration: 0.3s;
+$default-timing-function: ease;
+
+@mixin transition {
+    transition: height var(--transition-duration, $default-duration);
+    transition-timing-function: var(--timing-function, $default-timing-function);
+}
 
 .faq-row-wrapper {
     background-color: var(--faq-bg-color, $white);
@@ -25,9 +32,7 @@ $default-row-content-size: medium;
                 display: flex;
                 justify-content: space-between;
                 color: var(--row-title-color, $default-color);
-                font-weight: 400;
                 font-size: var(--row-title-text-size, $default-row-title-size);
-                letter-spacing: 0.25px;
                 cursor: pointer;
                 align-items: center;
 
@@ -52,55 +57,49 @@ $default-row-content-size: medium;
                 &.closed {
                     + .row-content {
                         visibility: hidden;
-                        z-index: -1;
+
                         &.animate {
                             opacity: 0;
-                            transition: height 0.12s, opacity 0.12s;
+                            transition: height var(--transition-duration, $default-duration);
                         }
 
                         &.static {
                             display: none;
                         }
-
-                        .row-content-text {
-                            margin: 0 0;
-                        }
                     }
 
                     .icon-wrapper {
                         transform: rotate(0deg);
-                        transition: transform 0.12s;
+                        transition: transform var(--transition-duration, $default-duration);
                     }
                 }
 
                 &.expanded {
                     + .row-content {
                         visibility: visible;
-                        z-index: 0;
-                        &.animate {
-                            opacity: 1;
-                            transition: height 0.12s, opacity 0.12s;
-                        }
 
                         &.static {
                             display: block;
-                        }
-
-                        .row-content-text {
-                            margin: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0);
                         }
                     }
 
                     .icon-wrapper {
                         transform: rotate(180deg);
-                        transition: transform 0.12s;
+                        transition: transform var(--transition-duration, $default-duration);
                     }
                 }
             }
 
-            .row-content-text {
-                color: var(--row-content-color, $default-color);
-                font-size: var(--row-content-text-size, $default-row-content-size);
+            .row-content {
+                overflow: hidden;
+                @include transition;
+
+                .row-content-text {
+                    color: var(--row-content-color, $default-color);
+                    font-size: var(--row-content-text-size, $default-row-content-size);
+                    padding: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0)
+                        var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0);
+                }
             }
         }
     }

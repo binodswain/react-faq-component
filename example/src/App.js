@@ -116,13 +116,31 @@ function Home() {
                         rowContentPaddingLeft: "50px",
                         rowContentPaddingRight: "150px",
                         arrowColor: "black",
-                        rowExpandDuration: "0.75s",
+                        transitionDuration: "5s",
                     }}
                 />
                 <br />
                 <br />
                 <br />
-                <Faq data={data} styles={styles} config={config} />
+                <Faq
+                    data={data}
+                    styles={{
+                        titleTextColor: "green",
+                        rowContentColor: "grey",
+                    }}
+                    config={config}
+                />
+                <br />
+                <br />
+                <br />
+                <Faq
+                    data={data}
+                    styles={styles}
+                    config={{
+                        animate: false,
+                        arrowIcon: "V",
+                    }}
+                />
                 <br />
                 <br />
                 <br />

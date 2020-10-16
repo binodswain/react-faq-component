@@ -4,14 +4,10 @@ import keyboardEvents from "./events";
 import style from "./styles.scss";
 import arrow_down from "./assets/arrow_down.svg";
 
-// const ref = React.createRef();
-
 export default class rowItem extends PureComponent {
     static propTypes = {
         config: PropTypes.object,
         data: PropTypes.object,
-        rowContentPaddingTop: PropTypes.string,
-        rowContentPaddingBottom: PropTypes.string,
         rowid: PropTypes.number,
     };
 
@@ -19,17 +15,50 @@ export default class rowItem extends PureComponent {
         isExpanded: false,
         ref: React.createRef(),
         height: 0,
+        rowClassName: "closed",
     };
 
-    expand = () => {
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        const { isExpanded: wasOpen } = prevState;
+        const { isExpanded: isOpen } = this.state;
         const { config: { animate = true } = {} } = this.props;
 
-        this.setState(
-            (prevState) => {
-                return { isExpanded: !prevState.isExpanded };
-            },
-            animate ? this.setHeight : undefined,
-        );
+        let rowClassName;
+        if (isOpen !== wasOpen) {
+            if (isOpen) {
+                rowClassName = animate ? "expanding" : "expanded";
+            } else {
+                rowClassName = animate ? "closing" : "closed";
+            }
+
+            return {
+                rowClassName,
+            };
+        }
+        return null;
+    }
+
+    finishTransition = () => {
+        const { isExpanded: isOpen } = this.state;
+        this.setState({ rowClassName: isOpen ? "expanded" : "closed" });
+    };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const { config: { animate = true } = {} } = this.props;
+        if (snapshot !== null) {
+            this.setState(
+                {
+                    ...snapshot,
+                },
+                animate ? this.setHeight : undefined,
+            );
+        }
+    }
+
+    expand = () => {
+        this.setState((prevState) => {
+            return { isExpanded: !prevState.isExpanded };
+        });
     };
 
     keyPress = (event) => {
@@ -48,21 +77,11 @@ export default class rowItem extends PureComponent {
     };
 
     setHeight = () => {
-        setTimeout(() => {
-            const { ref, isExpanded } = this.state;
-            const height =
-                "calc(" +
-                ref.current.scrollHeight +
-                "px" +
-                " + " +
-                (this.props.rowContentPaddingTop ? this.props.rowContentPaddingTop : "0px") +
-                " + " +
-                (this.props.rowContentPaddingBottom ? this.props.rowContentPaddingBottom : "0px") +
-                ")";
-            this.setState({
-                height: isExpanded ? height : 0,
-            });
-        }, 1);
+        const { ref, isExpanded } = this.state;
+        const height = ref.current.scrollHeight;
+        this.setState({
+            height: isExpanded ? height : 0,
+        });
     };
 
     render() {
@@ -71,7 +90,7 @@ export default class rowItem extends PureComponent {
             config: { animate = true, arrowIcon } = {},
         } = this.props;
 
-        const { isExpanded, ref, height } = this.state;
+        const { isExpanded, ref, height, rowClassName } = this.state;
 
         const attrs = {
             onClick: this.expand,
@@ -88,6 +107,7 @@ export default class rowItem extends PureComponent {
             id: `react-faq-rowcontent-${this.props.rowid}`,
             "aria-expanded": isExpanded,
             "aria-hidden": !isExpanded,
+            onTransitionEnd: this.finishTransition,
         };
 
         if (animate) {
@@ -96,12 +116,9 @@ export default class rowItem extends PureComponent {
             };
         }
 
-        const className = [
-            "row-title",
-            isExpanded ? "expanded" : "closed",
-            style["row-title"],
-            style[isExpanded ? "expanded" : "closed"],
-        ].join(" ");
+        const className = ["row-title", rowClassName, style["row-title"], style[rowClassName]].join(
+            " ",
+        );
 
         const icon = arrowIcon || (
             <div
@@ -120,15 +137,9 @@ export default class rowItem extends PureComponent {
         const contentTextClasses = [style["row-content-text"], "row-content-text"].join(" ");
         const rowItem =
             content && typeof content === "string" ? (
-                <div
-                    className={contentTextClasses}
-                    ref={ref}
-                    dangerouslySetInnerHTML={{ __html: content }}
-                />
+                <div className={contentTextClasses} dangerouslySetInnerHTML={{ __html: content }} />
             ) : (
-                <div className={contentTextClasses} ref={ref}>
-                    {content}
-                </div>
+                <div className={contentTextClasses}>{content}</div>
             );
 
         return (
@@ -139,7 +150,7 @@ export default class rowItem extends PureComponent {
                         {icon}
                     </span>
                 </div>
-                <div className={contentClasses} {...contentAttrs}>
+                <div className={contentClasses} {...contentAttrs} ref={ref}>
                     {rowItem}
                 </div>
             </section>
