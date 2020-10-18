@@ -1,0 +1,10 @@
+{
+    "data": {
+        "site": {
+            "siteMetadata": {
+                "title": "react-faq-component",
+                "description": "An accessible react package to render FAQ(frequently asked questions) in your React web app. Supports configurable parameters to customize as per requirement."
+            }
+        }
+    }
+}
