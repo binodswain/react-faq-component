@@ -6,7 +6,8 @@ const data = {
     title: "FAQ (How it works)",
     rows: [
         {
-            title: "Lorem ipsum dolor sit amet,",
+            title:
+                "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat",
             content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
             ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
             In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
@@ -116,13 +117,31 @@ function Home() {
                         rowContentPaddingLeft: "50px",
                         rowContentPaddingRight: "150px",
                         arrowColor: "black",
-                        rowExpandDuration: "0.75s",
+                        transitionDuration: "5s",
                     }}
                 />
                 <br />
                 <br />
                 <br />
-                <Faq data={data} styles={styles} config={config} />
+                <Faq
+                    data={data}
+                    styles={{
+                        titleTextColor: "green",
+                        rowContentColor: "grey",
+                    }}
+                    config={config}
+                />
+                <br />
+                <br />
+                <br />
+                <Faq
+                    data={data}
+                    styles={styles}
+                    config={{
+                        animate: false,
+                        arrowIcon: "V",
+                    }}
+                />
                 <br />
                 <br />
                 <br />

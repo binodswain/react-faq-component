@@ -11,7 +11,7 @@ const gitHubFork = () => {
         height="80"
         viewBox="0 0 250 250"
         style={{
-          fill: "#151513",
+          fill: "#5000ca",
           color: "#fff",
           position: "absolute",
           top: 0,
