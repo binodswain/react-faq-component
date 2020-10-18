@@ -26,6 +26,7 @@ $default-timing-function: ease;
     .row-body {
         .faq-row {
             flex-direction: column;
+            position: relative;
 
             .row-title {
                 padding: 10px 0;
@@ -36,14 +37,23 @@ $default-timing-function: ease;
                 cursor: pointer;
                 align-items: center;
 
+                .row-title-text {
+                    padding-right: 3em;
+                }
+
                 .icon-wrapper {
                     max-width: 25px;
                     max-height: 25px;
                     margin: 0;
                     padding: 0;
                     color: var(--arrow-color, $default-color);
+                    transform: rotate(0deg);
+                    transition: transform var(--transition-duration, $default-duration);
+                    position: absolute;
+                    top: 13px;
+                    right: 12px;
 
-                    .arrow-image,
+                    // .arrow-image,
                     svg {
                         width: 100%;
                         height: 100%;
@@ -67,11 +77,6 @@ $default-timing-function: ease;
                             display: none;
                         }
                     }
-
-                    .icon-wrapper {
-                        transform: rotate(0deg);
-                        transition: transform var(--transition-duration, $default-duration);
-                    }
                 }
 
                 &.expanded {
@@ -85,7 +90,11 @@ $default-timing-function: ease;
 
                     .icon-wrapper {
                         transform: rotate(180deg);
-                        transition: transform var(--transition-duration, $default-duration);
+                    }
+                }
+                &.expanding {
+                    .icon-wrapper {
+                        transform: rotate(180deg);
                     }
                 }
             }
