@@ -30,21 +30,9 @@ const Header = () => {
           marginBottom: `1em`,
         }}
       >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {title}
-          </Link>
-        </h1>
+        <h1 style={{ margin: 0 }}>{title}</h1>
         <p className="banner-text">{description}</p>
-        <div className="button-sec">
-
-        </div>
+        <div className="button-sec"></div>
       </div>
     </header>
   )

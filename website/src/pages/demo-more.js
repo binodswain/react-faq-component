@@ -11,7 +11,8 @@ const data = {
   title: "FAQ (How it works)",
   rows: [
     {
-      title: "Lorem ipsum dolor sit amet,",
+      title:
+        "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat Lorem ipsum dolor sit amet, ",
       content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
               ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
               In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
@@ -20,7 +21,7 @@ const data = {
     {
       title: "Nunc maximus, magna at ultricies elementum",
       content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
     },
     {
       title: "Can I use html as content",
@@ -41,6 +42,19 @@ const IndexPage = () => {
 
   return (
     <Fragment>
+      {/* <header className="banner-sec">
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `1.0875rem`,
+            marginBottom: `1em`,
+          }}
+        >
+          <h1 style={{ margin: 0 }}>react-faq-component</h1>
+        </div>
+      </header> */}
+
       <Layout>
         <SEO title="More demos" />
         <Gitfork />

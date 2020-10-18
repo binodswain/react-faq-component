@@ -649,7 +649,6 @@ pre tt:after {
 .banner-sec {
   background-color: var(--banner-bg-color);
   color: var(--banner-text-color);
-  min-height: 25em;
   margin-bottom: 1.5em;
 }
 
