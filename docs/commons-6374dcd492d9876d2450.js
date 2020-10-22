@@ -599,14 +599,14 @@
                 M(e, j, (t = R(t, a, r, o))),
                 N(t);
             }
-            const G = { current: null };
-            function q() {
-                const e = G.current;
+            const q = { current: null };
+            function G() {
+                const e = q.current;
                 if (null === e) throw Error(h(321));
                 return e;
             }
             const H = {
-                ReactCurrentDispatcher: G,
+                ReactCurrentDispatcher: q,
                 ReactCurrentBatchConfig: { suspense: null },
                 ReactCurrentOwner: A,
                 IsSomeRendererActing: { current: !1 },
@@ -713,32 +713,32 @@
                 return { $$typeof: y, type: e, compare: void 0 === t ? null : t };
             }),
             (t.useCallback = function (e, t) {
-                return q().useCallback(e, t);
+                return G().useCallback(e, t);
             }),
             (t.useContext = function (e, t) {
-                return q().useContext(e, t);
+                return G().useContext(e, t);
             }),
             (t.useDebugValue = function () {}),
             (t.useEffect = function (e, t) {
-                return q().useEffect(e, t);
+                return G().useEffect(e, t);
             }),
             (t.useImperativeHandle = function (e, t, n) {
-                return q().useImperativeHandle(e, t, n);
+                return G().useImperativeHandle(e, t, n);
             }),
             (t.useLayoutEffect = function (e, t) {
-                return q().useLayoutEffect(e, t);
+                return G().useLayoutEffect(e, t);
             }),
             (t.useMemo = function (e, t) {
-                return q().useMemo(e, t);
+                return G().useMemo(e, t);
             }),
             (t.useReducer = function (e, t, n) {
-                return q().useReducer(e, t, n);
+                return G().useReducer(e, t, n);
             }),
             (t.useRef = function (e) {
-                return q().useRef(e);
+                return G().useRef(e);
             }),
             (t.useState = function (e) {
-                return q().useState(e);
+                return G().useState(e);
             }),
             (t.version = "16.13.1");
         },
@@ -2034,6 +2034,7 @@
                 "faq-row": "styles_faq-row__2YF3c",
                 "row-body": "styles_row-body__1NvUo",
                 "row-title": "styles_row-title__1YiiY",
+                "no-tabfocus": "styles_no-tabfocus__1HmyD",
                 "row-title-text": "styles_row-title-text__1MuhU",
                 "icon-wrapper": "styles_icon-wrapper__2cftw",
                 closed: "styles_closed__39w54",
@@ -2059,7 +2060,7 @@
                         : o.appendChild(document.createTextNode(e));
                 }
             })(
-                ".styles_faq-row-wrapper__3vA1D {\n  background-color: var(--faq-bg-color, white); }\n  .styles_faq-row-wrapper__3vA1D h2 {\n    margin: 0;\n    color: var(--title-text-color, black); }\n  .styles_faq-row-wrapper__3vA1D .styles_faq-row__2YF3c {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    border-bottom: 1px solid #ccc; }\n  .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c {\n    flex-direction: column;\n    position: relative; }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY {\n      padding: 10px 0;\n      display: flex;\n      justify-content: space-between;\n      color: var(--row-title-color, black);\n      font-size: var(--row-title-text-size, large);\n      cursor: pointer;\n      align-items: center; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_row-title-text__1MuhU {\n        padding-right: 3em; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw {\n        max-width: 25px;\n        max-height: 25px;\n        margin: 0;\n        padding: 0;\n        color: var(--arrow-color, black);\n        transform: rotate(0deg);\n        transition: transform var(--transition-duration, 0.3s);\n        position: absolute;\n        top: 13px;\n        right: 12px; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          width: 100%;\n          height: 100%; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          fill: var(--arrow-color, black); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd {\n        visibility: hidden; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_animate__3ecdr {\n          opacity: 0;\n          transition: height var(--transition-duration, 0.3s); }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: none; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd {\n        visibility: visible; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: block; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy .styles_icon-wrapper__2cftw {\n        transform: rotate(180deg); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanding__2OAFB .styles_icon-wrapper__2cftw {\n        transform: rotate(180deg); }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd {\n      overflow: hidden;\n      transition: height var(--transition-duration, 0.3s);\n      transition-timing-function: var(--timing-function, ease); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd .styles_row-content-text__2sgAB {\n        color: var(--row-content-color, black);\n        font-size: var(--row-content-text-size, medium);\n        padding: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0); }\n",
+                ".styles_faq-row-wrapper__3vA1D {\n  background-color: var(--faq-bg-color, white); }\n  .styles_faq-row-wrapper__3vA1D h2 {\n    margin: 0;\n    color: var(--title-text-color, black); }\n  .styles_faq-row-wrapper__3vA1D .styles_faq-row__2YF3c {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    border-bottom: 1px solid #ccc; }\n  .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c {\n    flex-direction: column;\n    position: relative; }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY {\n      padding: 10px 0;\n      display: flex;\n      justify-content: space-between;\n      color: var(--row-title-color, black);\n      font-size: var(--row-title-text-size, large);\n      cursor: pointer;\n      align-items: center; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_no-tabfocus__1HmyD {\n        outline: none; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_row-title-text__1MuhU {\n        padding-right: 3em; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw {\n        max-width: 25px;\n        max-height: 25px;\n        margin: 0;\n        padding: 0;\n        color: var(--arrow-color, black);\n        transform: rotate(0deg);\n        transition: transform var(--transition-duration, 0.3s);\n        position: absolute;\n        top: 13px;\n        right: 12px; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          width: 100%;\n          height: 100%; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {\n          fill: var(--arrow-color, black); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd {\n        visibility: hidden; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_animate__3ecdr {\n          opacity: 0;\n          transition: height var(--transition-duration, 0.3s); }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_closed__39w54 + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: none; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd {\n        visibility: visible; }\n        .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy + .styles_row-content__QOGZd.styles_static__3chYW {\n          display: block; }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanded__3elPy .styles_icon-wrapper__2cftw {\n        transform: rotate(180deg); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY.styles_expanding__2OAFB .styles_icon-wrapper__2cftw {\n        transform: rotate(180deg); }\n    .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd {\n      overflow: hidden;\n      transition: height var(--transition-duration, 0.3s);\n      transition-timing-function: var(--timing-function, ease); }\n      .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd .styles_row-content-text__2sgAB {\n        color: var(--row-content-color, black);\n        font-size: var(--row-content-text-size, medium);\n        padding: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0); }\n",
             );
             const v = (function (e) {
                 d(n, r.PureComponent);
@@ -2171,32 +2172,42 @@
                                     i = (a = void 0 === a ? {} : a).animate,
                                     s = void 0 === i || i,
                                     c = a.arrowIcon,
-                                    l = this.state,
-                                    u = l.isExpanded,
-                                    p = l.ref,
-                                    d = l.height,
-                                    y = l.rowClassName,
-                                    g = {
+                                    l = a.tabFocus,
+                                    u = void 0 !== l && l,
+                                    p = this.state,
+                                    d = p.isExpanded,
+                                    y = p.ref,
+                                    g = p.height,
+                                    _ = p.rowClassName,
+                                    h = {
                                         onClick: this.expand,
                                         role: "button",
-                                        "aria-expanded": u,
+                                        "aria-expanded": d,
                                         "aria-controls": "react-faq-rowcontent-".concat(
                                             this.props.rowid,
                                         ),
-                                        tabIndex: 0,
                                         onKeyPress: this.keyPress,
                                         onKeyDown: this.keyPress,
-                                    },
-                                    _ = {
-                                        role: "region",
-                                        id: "react-faq-rowcontent-".concat(this.props.rowid),
-                                        "aria-expanded": u,
-                                        "aria-hidden": !u,
-                                        onTransitionEnd: this.finishTransition,
                                     };
-                                s && (_.style = { height: d });
-                                const h = ["row-title", y, w["row-title"], w[y]].join(" "),
-                                    m =
+                                u && (h.tabIndex = 0);
+                                const m = {
+                                    role: "region",
+                                    id: "react-faq-rowcontent-".concat(this.props.rowid),
+                                    "aria-expanded": d,
+                                    "aria-hidden": !d,
+                                    onTransitionEnd: this.finishTransition,
+                                };
+                                s && (m.style = { height: g });
+                                const v = [
+                                        "row-title",
+                                        _,
+                                        w["row-title"],
+                                        w[_],
+                                        u ? "" : w["no-tabfocus"],
+                                    ]
+                                        .filter(Boolean)
+                                        .join(" "),
+                                    T =
                                         c ||
                                         o.a.createElement("div", {
                                             dangerouslySetInnerHTML: {
@@ -2206,19 +2217,19 @@
                                             className: "arrow-image ".concat(w["arrow-image"]),
                                             alt: "Expand arrow",
                                         }),
-                                    v = [
+                                    b = [
                                         w["row-content"],
                                         "row-content",
                                         s ? w.animate : w.static,
                                     ].join(" "),
-                                    T = [w["row-content-text"], "row-content-text"].join(" "),
-                                    b =
+                                    E = [w["row-content-text"], "row-content-text"].join(" "),
+                                    A =
                                         r && "string" == typeof r
                                             ? o.a.createElement("div", {
-                                                className: T,
+                                                className: E,
                                                 dangerouslySetInnerHTML: { __html: r },
                                             })
-                                            : o.a.createElement("div", { className: T }, r);
+                                            : o.a.createElement("div", { className: E }, r);
                                 return o.a.createElement(
                                     "section",
                                     {
@@ -2227,7 +2238,7 @@
                                     },
                                     o.a.createElement(
                                         "div",
-                                        f({ className: h }, g),
+                                        f({ className: v }, h),
                                         o.a.createElement(
                                             "div",
                                             {
@@ -2245,10 +2256,10 @@
                                                 ),
                                                 "aria-hidden": "true",
                                             },
-                                            m,
+                                            T,
                                         ),
                                     ),
-                                    o.a.createElement("div", f({ className: v }, _, { ref: p }), b),
+                                    o.a.createElement("div", f({ className: b }, m, { ref: y }), A),
                                 );
                             },
                         },
@@ -2293,6 +2304,7 @@
                                             "--row-content-padding-left": c.rowContentPaddingLeft,
                                             "--arrow-color": c.arrowColor,
                                             "--transition-duration": c.transitionDuration,
+                                            "--timing-function": c.timingFunc,
                                         }),
                                     f = "faq-row-wrapper ".concat(w["faq-row-wrapper"]),
                                     p = "faq-title ".concat(w["faq-row"]),
@@ -2901,4 +2913,4 @@
         },
     },
 ]);
-//# sourceMappingURL=commons-66ce7be274fb3657c0f1.js.map
+//# sourceMappingURL=commons-6374dcd492d9876d2450.js.map
