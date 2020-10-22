@@ -27,6 +27,7 @@ export default class FaqComponent extends PureComponent {
             "--row-content-padding-left": styles.rowContentPaddingLeft,
             "--arrow-color": styles.arrowColor,
             "--transition-duration": styles.transitionDuration,
+            "--timing-function": styles.timingFunc,
         };
 
         const wrapperClass = `faq-row-wrapper ${style["faq-row-wrapper"]}`;

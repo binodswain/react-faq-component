@@ -87,7 +87,7 @@ export default class rowItem extends PureComponent {
     render() {
         const {
             data: { title, content },
-            config: { animate = true, arrowIcon } = {},
+            config: { animate = true, arrowIcon, tabFocus = false } = {},
         } = this.props;
 
         const { isExpanded, ref, height, rowClassName } = this.state;
@@ -97,10 +97,14 @@ export default class rowItem extends PureComponent {
             role: "button",
             "aria-expanded": isExpanded,
             "aria-controls": `react-faq-rowcontent-${this.props.rowid}`,
-            tabIndex: 0,
+            // tabIndex: 0,
             onKeyPress: this.keyPress,
             onKeyDown: this.keyPress,
         };
+
+        if (tabFocus) {
+            attrs.tabIndex = 0;
+        }
 
         const contentAttrs = {
             role: "region",
@@ -116,9 +120,15 @@ export default class rowItem extends PureComponent {
             };
         }
 
-        const className = ["row-title", rowClassName, style["row-title"], style[rowClassName]].join(
-            " ",
-        );
+        const className = [
+            "row-title",
+            rowClassName,
+            style["row-title"],
+            style[rowClassName],
+            tabFocus ? "" : style["no-tabfocus"],
+        ]
+            .filter(Boolean)
+            .join(" ");
 
         const icon = arrowIcon || (
             <div
