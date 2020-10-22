@@ -37,6 +37,10 @@ $default-timing-function: ease;
                 cursor: pointer;
                 align-items: center;
 
+                &.no-tabfocus {
+                    outline: none;
+                }
+
                 .row-title-text {
                     padding-right: 3em;
                 }

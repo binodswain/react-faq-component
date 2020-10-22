@@ -67,11 +67,13 @@ const styles = {
     titleTextColor: "blue",
     rowTitleColor: "blue",
     // rowContentColor: 'grey',
+    timingFunc: "linear",
 };
 
 const config = {
     animate: true,
     arrowIcon: "V",
+    tabFocus: true,
 };
 
 export default class App extends Component {
@@ -118,6 +120,7 @@ function Home() {
                         rowContentPaddingRight: "150px",
                         arrowColor: "black",
                         transitionDuration: "5s",
+                        timingFunc: "linear",
                     }}
                 />
                 <br />
@@ -152,6 +155,7 @@ function Home() {
                         rowTitleColor: "mediumseagreen",
                         arrowColor: "red",
                     }}
+                    config={config}
                 />
                 <br />
                 <br />
@@ -162,6 +166,7 @@ function Home() {
                         titleTextColor: "green",
                         rowContentColor: "grey",
                     }}
+                    config={config}
                 />
             </div>
         </div>

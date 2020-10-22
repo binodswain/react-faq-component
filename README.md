@@ -5,7 +5,7 @@
 [![license](https://badgen.net/github/license/binodswain/react-faq-component)](https://github.com/binodswain/react-faq-component/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/binodswain/react-faq-component.svg?branch=master)](https://travis-ci.com/binodswain/react-faq-component)
 
-React package to render FAQ section.
+An accessible React package to render FAQ section.
 [view demo](https://binodswain.github.io/react-faq-component/)
 
 ## Install
@@ -25,9 +25,9 @@ const data = {
     rows: [
         {
             title: "Lorem ipsum dolor sit amet,",
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat, 
-              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. 
-              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae. 
+            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
+              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
+              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
               Fusce sed commodo purus, at tempus turpis.`,
         },
         {
@@ -37,14 +37,14 @@ const data = {
         },
         {
             title: "Curabitur laoreet, mauris vel blandit fringilla",
-            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem. 
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam. 
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat. 
+            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
             Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
         },
         {
             title: "What is the package version",
-            content: "v1.0.0",
+            content: <p>current version is 1.2.1</p>,
         },
     ],
 };
@@ -60,6 +60,7 @@ const styles = {
 const config = {
     // animate: true,
     // arrowIcon: "V",
+    // tabFocus: true
 };
 
 export default class App extends Component {
@@ -94,10 +95,11 @@ const config = {
 
 The config passed to react-faq-component is an object having below keys(mentioned in the table).
 
-| attribute |    type    | optional | details                                                            |
-| --------- | :--------: | :------: | :----------------------------------------------------------------- |
-| animate   |  Boolean   |   true   | whether to enable the (row) content animation (default val : true) |
-| arrowIcon | JSX/string |   true   | custom component to display instead of default arrow               |
+| attribute |    type    | optional | details                                                                                                                                      |
+| --------- | :--------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| animate   |  Boolean   |   true   | Whether to enable the (row) content animation (default val : true)                                                                           |
+| arrowIcon | JSX/string |   true   | Custom component to display instead of default arrow                                                                                         |
+| tabFocus  |  Boolean   |   true   | Whether to add outline on tab focus (default val : false). Focus outline is added when keyboard tab is used to navigate through the contents |
 
 ## `styles` props format
 
@@ -120,23 +122,50 @@ const data = {
     rowContentPaddingLeft: '50px',
     // rowContentPaddingRight: '150px',
     // arrowColor: "red",
+    //transitionDuration: "1s",
+    // timingFunc: "ease"
   }
 }
 ```
 
-| attribute               |  type  | optional | default value | details                                   |
-| ----------------------- | :----: | :------: | :-----------: | :---------------------------------------- |
-| bgColor                 | String |   true   |     white     | changes background color of faq-component |
-| titleTextColor          | String |   true   |     black     | changes color of FAQ title/header text    |
-| rowTitleColor           | String |   true   |     black     | changes color of title text of rowItems   |
-| rowTitleTextSize        | String |   true   |     large     | changes color of title text of rowItems   |
-| rowContentColor         | String |   true   |     black     | changes color of content text of rowItems |
-| rowContentTextSize      | String |   true   |    medium     | changes color of title text of rowItems   |
-| arrowColor              | String |   true   |     black     | changes color of row arrow                |
-| rowContentPaddingTop    | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingBottom | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingLeft   | String |   true   |       0       | changes color of title text of rowItems   |
-| rowContentPaddingRight  | String |   true   |       0       | changes color of title text of rowItems   |
+| attribute               |  type  | optional | default value | details                                            |
+| ----------------------- | :----: | :------: | :-----------: | :------------------------------------------------- |
+| bgColor                 | String |   true   |     white     | background color of faq-component                  |
+| titleTextColor          | String |   true   |     black     | text color of FAQ title/header text                |
+| rowTitleColor           | String |   true   |     black     | text color of title text of rowItems               |
+| rowTitleTextSize        | String |   true   |     large     | size of title text in rowItems                     |
+| rowContentColor         | String |   true   |     black     | text color of row content in rowItems              |
+| rowContentTextSize      | String |   true   |    medium     | size of row content in rowItems                    |
+| arrowColor              | String |   true   |     black     | color of row arrow                                 |
+| rowContentPaddingTop    | String |   true   |       0       | value of padding-top of row content in rowItems    |
+| rowContentPaddingBottom | String |   true   |       0       | value of padding-bottom of row content in rowItems |
+| rowContentPaddingLeft   | String |   true   |       0       | value of padding-left of row content in rowItems   |
+| rowContentPaddingRight  | String |   true   |       0       | value of padding-right of row content in rowItems  |
+| transitionDuration      | String |   true   |     0.3s      | transition duration for expanding row content      |
+| timingFunc              | String |   true   |     ease      | transition function for expanding row content      |
+
+If the above style options are not enough, you can write you own custom css to apply styles on the elements.
+
+```scss
+.faq-row-wrapper {
+    .faq-title {
+    }
+
+    .faq-body {
+        .faq-row {
+            .row-title {
+            }
+
+            .row-content {
+                .row-content-text {
+                }
+            }
+        }
+    }
+}
+```
+
+These classnames are applied to the elements and do not contain any styles.
 
 ## Screenshot
 
