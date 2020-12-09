@@ -1,0 +1,22 @@
+.faq-style-wrapper {
+    margin-top: 2em;
+}
+
+.faq-style-wrapper .faq-title {
+    font-size: x-large;
+}
+
+.faq-style-wrapper .faq-body .faq-row {
+    padding: 0.75em 0;
+}
+
+.faq-style-wrapper .faq-body .faq-row .row-title {
+    font-size: larger;
+    color: grey;
+}
+
+.faq-style-wrapper .faq-body .faq-row .row-content-text {
+    padding: 2em !important;
+    font-size: medium !important;
+    color: teal !important;
+}
