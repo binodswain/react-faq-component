@@ -165,6 +165,8 @@ If the above style options are not enough, you can write you own custom css to a
 }
 ```
 
+[Example with css style](/example/src/with-css-override)
+
 These classnames are applied to the elements and do not contain any styles.
 
 ## Screenshot
