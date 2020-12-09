@@ -1,7 +1,15 @@
 body {
-  margin: 3em;
-  padding: 0;
-  font-family: sans-serif;
-  /* width: 50%; */
-  max-width: 965px;
+    margin: 3em auto;
+    padding: 0;
+    font-family: sans-serif;
+    max-width: 965px;
+    padding: 0 2em;
+}
+
+.section-title {
+    background-color: #5000ca;
+    color: white;
+    padding: 1em;
+    margin: 2em 0;
+    text-align: center;
 }
