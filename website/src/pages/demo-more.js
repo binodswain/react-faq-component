@@ -63,10 +63,13 @@ const IndexPage = () => {
           <h2>View 1 (with animation):</h2>
           <pre>
             <code className="language-jsx">
-              {`<Faq data={data} styles={{
-                    titleTextColor: "green",
-                    rowTitleColor: "mediumseagreen"
-                    }} />`}
+              {`<Faq 
+    data={data}
+    styles={{
+        titleTextColor: "green",
+        rowTitleColor: "mediumseagreen"
+    }} 
+/>`}
             </code>
           </pre>
           <Faq
@@ -75,18 +78,21 @@ const IndexPage = () => {
               titleTextColor: "green",
               rowTitleColor: "mediumseagreen",
             }}
-            config={{
-              animate: true,
-            }}
           />
 
           <h2>View 2 (with animation, custom icon):</h2>
           <pre>
             <code className="language-jsx">
-              {`<Faq data={data} styles={{
-                    titleTextColor: "green",
-                    rowTitleColor: "mediumseagreen"
-                    }} />`}
+              {`<Faq 
+    data={data} 
+    styles={{
+        titleTextColor: "green",
+        rowTitleColor: "mediumseagreen"
+    }} 
+    config={{
+        arrowIcon: "V",
+    }}
+/>`}
             </code>
           </pre>
           <Faq
@@ -97,18 +103,21 @@ const IndexPage = () => {
               arrowColor: "red",
             }}
             config={{
-              animate: true,
               arrowIcon: "V",
             }}
           />
 
-          <h2>View 3:</h2>
+          <h2>View 3 (with different title colors):</h2>
           <pre>
             <code className="language-jsx">
-              {`<Faq data={data} styles={{
-                    titleTextColor: "green",
-                    rowTitleColor: "mediumseagreen"
-                    }} />`}
+              {`<Faq 
+    data={data} 
+    styles={{
+        titleTextColor: "green",
+        rowTitleColor: "mediumseagreen",
+        rowContentColor: "grey"
+    }}
+/>`}
             </code>
           </pre>
           <Faq
@@ -116,42 +125,29 @@ const IndexPage = () => {
             styles={{
               titleTextColor: "green",
               rowTitleColor: "mediumseagreen",
-            }}
-          />
-
-          <h2>View 4:</h2>
-          <pre>
-            <code className="language-jsx">
-              {`<Faq data={data} styles={{
-                    titleTextColor: "green",
-                    rowContentColor: "grey"
-                    }} />`}
-            </code>
-          </pre>
-          <Faq
-            data={data}
-            styles={{
-              titleTextColor: "green",
               rowContentColor: "grey",
             }}
           />
 
-          <h2>View 5:</h2>
+          <h2>View 4 (with content padding):</h2>
           <pre>
             <code className="language-jsx">
-              {`<Faq data={data} styles={{
-                    bgColor: "white",
-                    titleTextColor: "#48482a",
-                    rowTitleColor: "#78789a",
-                    rowTitleTextSize: 'large',
-                    rowContentColor: "#48484a",
-                    rowContentTextSize: '16px',
-                    rowContentPaddingTop: '10px',
-                    rowContentPaddingBottom: '10px',
-                    rowContentPaddingLeft: '50px',
-                    rowContentPaddingRight: '150px',
-                    arrowColor: "black",
-                    }} />`}
+              {`<Faq 
+    data={data} 
+    styles={{
+        bgColor: "white",
+        titleTextColor: "#48482a",
+        rowTitleColor: "#78789a",
+        rowTitleTextSize: 'large',
+        rowContentColor: "#48484a",
+        rowContentTextSize: '16px',
+        rowContentPaddingTop: '10px',
+        rowContentPaddingBottom: '10px',
+        rowContentPaddingLeft: '50px',
+        rowContentPaddingRight: '150px',
+        arrowColor: "black",
+        }} 
+/>`}
             </code>
           </pre>
           <Faq
@@ -168,6 +164,29 @@ const IndexPage = () => {
               rowContentPaddingLeft: "50px",
               rowContentPaddingRight: "150px",
               arrowColor: "black",
+            }}
+          />
+
+          <h2>View 5 (with custom transition and tabFocus):</h2>
+          <pre>
+            <code className="language-jsx">{`<Faq data={data} 
+    styles={{
+        transitionDuration: "2.5s",
+        timingFunc: "linear"
+    }}
+    config={{
+        tabFocus: true,
+    }}
+/>`}</code>
+          </pre>
+          <Faq
+            data={data}
+            styles={{
+              transitionDuration: "2.5s",
+              timingFunc: "linear",
+            }}
+            config={{
+              tabFocus: true,
             }}
           />
         </section>

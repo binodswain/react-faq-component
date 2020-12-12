@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -14,7 +13,11 @@ const Footer = () => {
       >
         <h4 style={{ margin: 0 }}>
           MIT ©{" "}
-          <a href="https://github.com/binodswain" target="_blank">
+          <a
+            href="https://github.com/binodswain"
+            target="_blank"
+            rel="noreferrer"
+          >
             Binod Swain
           </a>
         </h4>
