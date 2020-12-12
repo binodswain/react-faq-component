@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
@@ -16,9 +15,7 @@ const Header = () => {
   `)
 
   console.log(data)
-  const {
-    title, description
-  } = data.site.siteMetadata;
+  const { title, description } = data.site.siteMetadata
 
   return (
     <header className="banner-sec">
@@ -36,7 +33,7 @@ const Header = () => {
       </div>
     </header>
   )
- }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
