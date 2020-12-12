@@ -1,5 +1,5 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
-    [6],
+    [5],
     {
         PdVa: function (e) {
             e.exports = JSON.parse(
@@ -10,15 +10,17 @@
             
             a.r(t);
             const n = a("q1tI"),
-                l = a.n(n),
-                r = a("Wbzz"),
-                s = a("Bl7J"),
-                i = a("vrFN"),
+                r = a.n(n),
+                l = (a("qePV"), a("+ZDr")),
+                s = a.n(l);
+            a("lw3w"), a("emEt").default.enqueue;
+            const i = a("Bl7J"),
+                o = a("vrFN"),
                 c = a("TwNY"),
-                o = a("tHFp"),
-                m = a("jHpe"),
-                u = a.n(m),
-                p =
+                m = a("oPzb"),
+                u = a("jHpe"),
+                p = a.n(u),
+                f =
                     (a("y1X9"),
                     a("QWvX"),
                     a("ZgVT"),
@@ -28,15 +30,15 @@
                     a("hL/g"),
                     a("PdVa")),
                 d = function () {
-                    const e = p.data;
+                    const e = f.data;
                     console.log(e);
                     const t = e.site.siteMetadata,
                         a = t.title,
                         n = t.description;
-                    return l.a.createElement(
+                    return r.a.createElement(
                         "header",
                         { className: "banner-sec" },
-                        l.a.createElement(
+                        r.a.createElement(
                             "div",
                             {
                                 style: {
@@ -46,9 +48,9 @@
                                     marginBottom: "1em",
                                 },
                             },
-                            l.a.createElement("h1", { style: { margin: 0 } }, a),
-                            l.a.createElement("p", { className: "banner-text" }, n),
-                            l.a.createElement("div", { className: "button-sec" }),
+                            r.a.createElement("h1", { style: { margin: 0 } }, a),
+                            r.a.createElement("p", { className: "banner-text" }, n),
+                            r.a.createElement("div", { className: "button-sec" }),
                         ),
                     );
                 };
@@ -62,7 +64,7 @@
                         { title: "Question 2", content: "Answer 2" },
                     ],
                 },
-                f = {
+                h = {
                     title: "FAQ (How it works)",
                     rows: [
                         {
@@ -83,122 +85,122 @@
                         { title: "What is the package version", content: "v1.0.5" },
                     ],
                 },
-                h = { animate: !0 },
-                v = { titleTextColor: "blue", rowTitleColor: "blue" };
+                v = { animate: !0 },
+                N = { titleTextColor: "blue", rowTitleColor: "blue" };
             t.default = function () {
                 return (
                     Object(n.useEffect)(function () {
-                        u.a.highlightAll();
+                        p.a.highlightAll();
                     }, []),
-                    l.a.createElement(
+                    r.a.createElement(
                         n.Fragment,
                         null,
-                        l.a.createElement(i.a, { title: "react-faq-component" }),
-                        l.a.createElement(g, null),
-                        l.a.createElement(
-                            s.a,
+                        r.a.createElement(o.a, { title: "react-faq-component" }),
+                        r.a.createElement(g, null),
+                        r.a.createElement(
+                            i.a,
                             null,
-                            l.a.createElement(c.a, null),
-                            l.a.createElement(
+                            r.a.createElement(c.a, null),
+                            r.a.createElement(
                                 "section",
                                 { className: "badges" },
-                                l.a.createElement(
+                                r.a.createElement(
                                     "a",
                                     { href: "https://www.npmjs.com/package/react-faq-component" },
-                                    l.a.createElement("img", {
+                                    r.a.createElement("img", {
                                         src: "https://badgen.net/npm/v/react-faq-component",
                                         alt: "release",
                                     }),
                                 ),
-                                l.a.createElement(
+                                r.a.createElement(
                                     "a",
                                     {
                                         href:
                                             "https://github.com/binodswain/react-faq-component/issues",
                                     },
-                                    l.a.createElement("img", {
+                                    r.a.createElement("img", {
                                         src:
                                             "https://badgen.net/github/open-issues/binodswain/react-faq-component",
                                         alt: "open-issues",
                                     }),
                                 ),
-                                l.a.createElement(
+                                r.a.createElement(
                                     "a",
                                     {
                                         href:
                                             "https://github.com/binodswain/react-faq-component/blob/master/LICENSE",
                                     },
-                                    l.a.createElement("img", {
+                                    r.a.createElement("img", {
                                         src:
                                             "https://badgen.net/github/license/binodswain/react-faq-component",
                                         alt: "license",
                                     }),
                                 ),
                             ),
-                            l.a.createElement(
+                            r.a.createElement(
                                 "section",
                                 { className: "demo" },
-                                l.a.createElement("h2", null, "Demo"),
-                                l.a.createElement(o.a, { data: f, styles: v, config: h }),
-                                l.a.createElement(r.a, { to: "/demo-more" }, "More demo"),
+                                r.a.createElement("h2", null, "Demo"),
+                                r.a.createElement(m.a, { data: h, styles: N, config: v }),
+                                r.a.createElement(s.a, { to: "/demo-more" }, "More demo"),
                             ),
-                            l.a.createElement(
+                            r.a.createElement(
                                 "section",
                                 { className: "usage" },
-                                l.a.createElement("h3", null, "Usage"),
-                                l.a.createElement("div", null, "Install the package."),
-                                l.a.createElement(
+                                r.a.createElement("h3", null, "Usage"),
+                                r.a.createElement("div", null, "Install the package."),
+                                r.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    r.a.createElement(
                                         "code",
                                         { className: "language-markup" },
                                         "npm install --save react-faq-component",
                                     ),
                                 ),
-                                l.a.createElement("div", null, "Import the package."),
-                                l.a.createElement(
+                                r.a.createElement("div", null, "Import the package."),
+                                r.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    r.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
                                         "import Faq from 'react-faq-component';",
                                     ),
                                 ),
-                                l.a.createElement("br", null),
-                                l.a.createElement("div", null, "example: "),
-                                l.a.createElement("br", null),
-                                l.a.createElement(
+                                r.a.createElement("br", null),
+                                r.a.createElement("div", null, "example: "),
+                                r.a.createElement("br", null),
+                                r.a.createElement(
                                     "pre",
                                     { className: "line-numbers" },
-                                    l.a.createElement(
+                                    r.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
                                         'import React, { Component } from \'react\';\nimport Faq from \'react-faq-component\';\n\nconst data = {\n  title: "FAQ (How it works)",\n  rows: [\n    {\n      title: "Lorem ipsum dolor sit amet,",\n      content: "Lorem ipsum dolor sit amet, consectetur "\n    },\n    {\n      title: "Nunc maximus, magna at ultricies elementum",\n      content: "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam."\n    },\n    {\n      title: "Curabitur laoreet, mauris vel blandit fringilla",\n      content: "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc"\n    },\n    {\n      title: "What is the package version",\n      content: "v1.0.5"\n    }]\n}\n\nexport default class App extends Component {\n  render() {\n    return (\n      <div>\n        <Faq data={data}/>\n      </div>\n    )\n  }\n}\n',
                                     ),
                                 ),
                             ),
-                            l.a.createElement(
+                            r.a.createElement(
                                 "section",
                                 { className: "dataformat" },
-                                l.a.createElement("h3", null, "Data format"),
-                                l.a.createElement(
+                                r.a.createElement("h3", null, "Data format"),
+                                r.a.createElement(
                                     "p",
                                     null,
                                     "The data passed into ",
-                                    l.a.createElement("strong", null, "react-faq-component"),
+                                    r.a.createElement("strong", null, "react-faq-component"),
                                     " is an object having two keys i.e ",
-                                    l.a.createElement("strong", null, "title"),
+                                    r.a.createElement("strong", null, "title"),
                                     " (String) and",
                                     " ",
-                                    l.a.createElement("strong", null, "rows"),
+                                    r.a.createElement("strong", null, "rows"),
                                     " (array of objects).",
                                 ),
-                                l.a.createElement(
+                                r.a.createElement(
                                     "pre",
                                     { className: "line-numbers" },
-                                    l.a.createElement(
+                                    r.a.createElement(
                                         "code",
                                         { className: "language-json" },
                                         JSON.stringify(b, null, 4),
@@ -206,11 +208,128 @@
                                 ),
                             ),
                         ),
-                        l.a.createElement(E.a, null),
+                        r.a.createElement(E.a, null),
                     )
                 );
             };
         },
+        WJkJ: function (e, t) {
+            e.exports = "\t\n\v\f\r                　\u2028\u2029\ufeff";
+        },
+        WKiH: function (e, t, a) {
+            const n = a("HYAF"),
+                r = "[" + a("WJkJ") + "]",
+                l = RegExp("^" + r + r + "*"),
+                s = RegExp(r + r + "*$"),
+                i = function (e) {
+                    return function (t) {
+                        let a = String(n(t));
+                        return 1 & e && (a = a.replace(l, "")), 2 & e && (a = a.replace(s, "")), a;
+                    };
+                };
+            e.exports = { start: i(1), end: i(2), trim: i(3) };
+        },
+        lw3w: function (e, t, a) {
+            let n;
+            e.exports = ((n = a("rzlk")) && n.default) || n;
+        },
+        qePV: function (e, t, a) {
+            
+            const n = a("g6v/"),
+                r = a("2oRo"),
+                l = a("lMq5"),
+                s = a("busE"),
+                i = a("UTVS"),
+                o = a("xrYK"),
+                c = a("cVYH"),
+                m = a("wE6v"),
+                u = a("0Dky"),
+                p = a("fHMY"),
+                f = a("JBy8").f,
+                d = a("Bs8V").f,
+                g = a("m/L8").f,
+                E = a("WKiH").trim,
+                b = r.Number,
+                h = b.prototype,
+                v = "Number" == o(p(h)),
+                N = function (e) {
+                    let t,
+                        a,
+                        n,
+                        r,
+                        l,
+                        s,
+                        i,
+                        o,
+                        c = m(e, !1);
+                    if ("string" == typeof c && c.length > 2)
+                        if (43 === (t = (c = E(c)).charCodeAt(0)) || 45 === t) {
+                            if (88 === (a = c.charCodeAt(2)) || 120 === a) return NaN;
+                        } else if (48 === t) {
+                            switch (c.charCodeAt(1)) {
+                                case 66:
+                                case 98:
+                                    (n = 2), (r = 49);
+                                    break;
+                                case 79:
+                                case 111:
+                                    (n = 8), (r = 55);
+                                    break;
+                                default:
+                                    return +c;
+                            }
+                            for (s = (l = c.slice(2)).length, i = 0; i < s; i++)
+                                if ((o = l.charCodeAt(i)) < 48 || o > r) return NaN;
+                            return parseInt(l, n);
+                        }
+                    return +c;
+                };
+            if (l("Number", !b(" 0o1") || !b("0b1") || b("+0x1"))) {
+                for (
+                    var w,
+                        q = function (e) {
+                            const t = arguments.length < 1 ? 0 : e,
+                                a = this;
+                            return a instanceof q &&
+                                (v
+                                    ? u(function () {
+                                        h.valueOf.call(a);
+                                    })
+                                    : "Number" != o(a))
+                                ? c(new b(N(t)), a, q)
+                                : N(t);
+                        },
+                        I = n
+                            ? f(b)
+                            : "MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger".split(
+                                ",",
+                            ),
+                        x = 0;
+                    I.length > x;
+                    x++
+                )
+                    i(b, (w = I[x])) && !i(q, w) && g(q, w, d(b, w));
+                (q.prototype = h), (h.constructor = q), s(r, "Number", q);
+            }
+        },
+        rzlk: function (e, t, a) {
+            
+            a.r(t);
+            a("zKZe");
+            const n = a("q1tI"),
+                r = a.n(n),
+                l = a("IOVJ");
+            t.default = function (e) {
+                const t = e.location,
+                    a = e.pageResources;
+                return a
+                    ? r.a.createElement(
+                        l.a,
+                        Object.assign({ location: t, pageResources: a }, a.json),
+                    )
+                    : null;
+            };
+        },
     },
 ]);
-//# sourceMappingURL=component---src-pages-index-js-2bbba98ae886f2e34520.js.map
+//# sourceMappingURL=component---src-pages-index-js-f86f20e43040e60b82ab.js.map

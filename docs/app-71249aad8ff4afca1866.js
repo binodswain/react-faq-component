@@ -1,5 +1,5 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
-    [4],
+    [3],
     {
         "+ZDr": function (t, e, n) {
             
@@ -3070,10 +3070,10 @@
         XyBk: function (t, e, n) {
             e.components = {
                 "component---src-pages-demo-more-js": function () {
-                    return Promise.all([n.e(1), n.e(2), n.e(0), n.e(5)]).then(n.bind(null, "Agvw"));
+                    return Promise.all([n.e(1), n.e(0), n.e(4)]).then(n.bind(null, "Agvw"));
                 },
                 "component---src-pages-index-js": function () {
-                    return Promise.all([n.e(1), n.e(2), n.e(0), n.e(6)]).then(n.bind(null, "RXBc"));
+                    return Promise.all([n.e(1), n.e(0), n.e(5)]).then(n.bind(null, "RXBc"));
                 },
             };
         },
@@ -5940,6 +5940,6 @@
             };
         },
     },
-    [["UxWs", 3, 1, 0]],
+    [["UxWs", 2, 6, 0]],
 ]);
-//# sourceMappingURL=app-b08396ff4a1604499a77.js.map
+//# sourceMappingURL=app-71249aad8ff4afca1866.js.map

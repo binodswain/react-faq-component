@@ -1,26 +1,26 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
-    [5],
+    [4],
     {
-        Agvw: function (e, t, a) {
+        Agvw: function (e, t, n) {
             
-            a.r(t);
-            const n = a("q1tI"),
-                l = a.n(n),
-                o = a("Bl7J"),
-                r = a("vrFN"),
-                i = a("TwNY"),
-                s = a("W/9C"),
-                m = a("tHFp"),
-                u = a("jHpe"),
-                c = a.n(u),
+            n.r(t);
+            const a = n("q1tI"),
+                o = n.n(a),
+                l = n("Bl7J"),
+                r = n("vrFN"),
+                i = n("TwNY"),
+                s = n("W/9C"),
+                m = n("oPzb"),
+                u = n("jHpe"),
+                c = n.n(u),
                 d =
-                    (a("y1X9"),
-                    a("QWvX"),
-                    a("ZgVT"),
-                    a("bPOv"),
-                    a("85O/"),
-                    a("CjHp"),
-                    a("hL/g"),
+                    (n("y1X9"),
+                    n("QWvX"),
+                    n("ZgVT"),
+                    n("bPOv"),
+                    n("85O/"),
+                    n("CjHp"),
+                    n("hL/g"),
                     {
                         title: "FAQ (How it works)",
                         rows: [
@@ -45,104 +45,94 @@
                     });
             t.default = function () {
                 return (
-                    Object(n.useEffect)(function () {
+                    Object(a.useEffect)(function () {
                         c.a.highlightAll();
                     }, []),
-                    l.a.createElement(
-                        n.Fragment,
+                    o.a.createElement(
+                        a.Fragment,
                         null,
-                        l.a.createElement(
-                            o.a,
+                        o.a.createElement(
+                            l.a,
                             null,
-                            l.a.createElement(r.a, { title: "More demos" }),
-                            l.a.createElement(i.a, null),
-                            l.a.createElement("h1", null, "More Demos"),
-                            l.a.createElement(
+                            o.a.createElement(r.a, { title: "More demos" }),
+                            o.a.createElement(i.a, null),
+                            o.a.createElement("h1", null, "More Demos"),
+                            o.a.createElement(
                                 "section",
                                 { className: "demo" },
-                                l.a.createElement("h2", null, "View 1 (with animation):"),
-                                l.a.createElement(
+                                o.a.createElement("h2", null, "View 1 (with animation):"),
+                                o.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    o.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
-                                        '<Faq data={data} styles={{\n                    titleTextColor: "green",\n                    rowTitleColor: "mediumseagreen"\n                    }} />',
+                                        '<Faq \n    data={data}\n    styles={{\n        titleTextColor: "green",\n        rowTitleColor: "mediumseagreen"\n    }} \n/>',
                                     ),
                                 ),
-                                l.a.createElement(m.a, {
+                                o.a.createElement(m.a, {
                                     data: d,
                                     styles: {
                                         titleTextColor: "green",
                                         rowTitleColor: "mediumseagreen",
                                     },
-                                    config: { animate: !0 },
                                 }),
-                                l.a.createElement(
+                                o.a.createElement(
                                     "h2",
                                     null,
                                     "View 2 (with animation, custom icon):",
                                 ),
-                                l.a.createElement(
+                                o.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    o.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
-                                        '<Faq data={data} styles={{\n                    titleTextColor: "green",\n                    rowTitleColor: "mediumseagreen"\n                    }} />',
+                                        '<Faq \n    data={data} \n    styles={{\n        titleTextColor: "green",\n        rowTitleColor: "mediumseagreen"\n    }} \n    config={{\n        arrowIcon: "V",\n    }}\n/>',
                                     ),
                                 ),
-                                l.a.createElement(m.a, {
+                                o.a.createElement(m.a, {
                                     data: d,
                                     styles: {
                                         titleTextColor: "green",
                                         rowTitleColor: "mediumseagreen",
                                         arrowColor: "red",
                                     },
-                                    config: { animate: !0, arrowIcon: "V" },
+                                    config: { arrowIcon: "V" },
                                 }),
-                                l.a.createElement("h2", null, "View 3:"),
-                                l.a.createElement(
+                                o.a.createElement(
+                                    "h2",
+                                    null,
+                                    "View 3 (with different title colors):",
+                                ),
+                                o.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    o.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
-                                        '<Faq data={data} styles={{\n                    titleTextColor: "green",\n                    rowTitleColor: "mediumseagreen"\n                    }} />',
+                                        '<Faq \n    data={data} \n    styles={{\n        titleTextColor: "green",\n        rowTitleColor: "mediumseagreen",\n        rowContentColor: "grey"\n    }}\n/>',
                                     ),
                                 ),
-                                l.a.createElement(m.a, {
+                                o.a.createElement(m.a, {
                                     data: d,
                                     styles: {
                                         titleTextColor: "green",
                                         rowTitleColor: "mediumseagreen",
+                                        rowContentColor: "grey",
                                     },
                                 }),
-                                l.a.createElement("h2", null, "View 4:"),
-                                l.a.createElement(
+                                o.a.createElement("h2", null, "View 4 (with content padding):"),
+                                o.a.createElement(
                                     "pre",
                                     null,
-                                    l.a.createElement(
+                                    o.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
-                                        '<Faq data={data} styles={{\n                    titleTextColor: "green",\n                    rowContentColor: "grey"\n                    }} />',
+                                        "<Faq \n    data={data} \n    styles={{\n        bgColor: \"white\",\n        titleTextColor: \"#48482a\",\n        rowTitleColor: \"#78789a\",\n        rowTitleTextSize: 'large',\n        rowContentColor: \"#48484a\",\n        rowContentTextSize: '16px',\n        rowContentPaddingTop: '10px',\n        rowContentPaddingBottom: '10px',\n        rowContentPaddingLeft: '50px',\n        rowContentPaddingRight: '150px',\n        arrowColor: \"black\",\n        }} \n/>",
                                     ),
                                 ),
-                                l.a.createElement(m.a, {
-                                    data: d,
-                                    styles: { titleTextColor: "green", rowContentColor: "grey" },
-                                }),
-                                l.a.createElement("h2", null, "View 5:"),
-                                l.a.createElement(
-                                    "pre",
-                                    null,
-                                    l.a.createElement(
-                                        "code",
-                                        { className: "language-jsx" },
-                                        "<Faq data={data} styles={{\n                    bgColor: \"white\",\n                    titleTextColor: \"#48482a\",\n                    rowTitleColor: \"#78789a\",\n                    rowTitleTextSize: 'large',\n                    rowContentColor: \"#48484a\",\n                    rowContentTextSize: '16px',\n                    rowContentPaddingTop: '10px',\n                    rowContentPaddingBottom: '10px',\n                    rowContentPaddingLeft: '50px',\n                    rowContentPaddingRight: '150px',\n                    arrowColor: \"black\",\n                    }} />",
-                                    ),
-                                ),
-                                l.a.createElement(m.a, {
+                                o.a.createElement(m.a, {
                                     data: d,
                                     styles: {
                                         bgColor: "white",
@@ -158,13 +148,32 @@
                                         arrowColor: "black",
                                     },
                                 }),
+                                o.a.createElement(
+                                    "h2",
+                                    null,
+                                    "View 5 (with custom transition and tabFocus):",
+                                ),
+                                o.a.createElement(
+                                    "pre",
+                                    null,
+                                    o.a.createElement(
+                                        "code",
+                                        { className: "language-jsx" },
+                                        '<Faq data={data} \n    styles={{\n        transitionDuration: "2.5s",\n        timingFunc: "linear"\n    }}\n    config={{\n        tabFocus: true,\n    }}\n/>',
+                                    ),
+                                ),
+                                o.a.createElement(m.a, {
+                                    data: d,
+                                    styles: { transitionDuration: "2.5s", timingFunc: "linear" },
+                                    config: { tabFocus: !0 },
+                                }),
                             ),
                         ),
-                        l.a.createElement(s.a, null),
+                        o.a.createElement(s.a, null),
                     )
                 );
             };
         },
     },
 ]);
-//# sourceMappingURL=component---src-pages-demo-more-js-1bd810612e408df8c2e7.js.map
+//# sourceMappingURL=component---src-pages-demo-more-js-c9fb8d83ee5497fb30d3.js.map
