@@ -113,6 +113,7 @@ const data = {
   styles: {
     // bgColor: 'white',
     titleTextColor: 'blue',
+    // titleTextSize: '48px',
     rowTitleColor: 'blue',
     // rowTitleTextSize: 'medium',
     // rowContentColor: 'grey',

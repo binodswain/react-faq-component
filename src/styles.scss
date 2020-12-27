@@ -1,5 +1,6 @@
 $default-color: black;
 $white: white;
+$default-title-size: 16px;
 $default-row-title-size: large;
 $default-row-content-size: medium;
 $default-duration: 0.3s;
@@ -15,6 +16,7 @@ $default-timing-function: ease;
     h2 {
         margin: 0;
         color: var(--title-text-color, $default-color);
+        font-size: var(--title-text-size, $default-title-size);
     }
     .faq-row {
         display: flex;
