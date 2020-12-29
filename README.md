@@ -133,6 +133,7 @@ const data = {
 | ----------------------- | :----: | :------: | :-----------: | :------------------------------------------------- |
 | bgColor                 | String |   true   |     white     | background color of faq-component                  |
 | titleTextColor          | String |   true   |     black     | text color of FAQ title/header text                |
+| titleTextSize           | String |   true   |     30px      | size of FAQ title/header text                      |
 | rowTitleColor           | String |   true   |     black     | text color of title text of rowItems               |
 | rowTitleTextSize        | String |   true   |     large     | size of title text in rowItems                     |
 | rowContentColor         | String |   true   |     black     | text color of row content in rowItems              |
