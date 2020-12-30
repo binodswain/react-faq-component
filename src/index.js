@@ -17,6 +17,7 @@ export default class FaqComponent extends PureComponent {
         const styleConfig = {
             "--faq-bg-color": styles.bgColor,
             "--title-text-color": styles.titleTextColor,
+            "--title-text-size": styles.titleTextSize,
             "--row-title-color": styles.rowTitleColor,
             "--row-title-text-size": styles.rowTitleTextSize,
             "--row-content-color": styles.rowContentColor,
