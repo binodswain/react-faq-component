@@ -1,6 +1,6 @@
 {
     "name": "react-faq-component",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "main": "build/index.js",
     "module": "build/index.es.js",
     "description": "React package to render collapsible faq sections",
