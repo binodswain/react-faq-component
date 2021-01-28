@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -46,12 +46,32 @@ const data = {
 };
 
 export default function WithCssStyleComp() {
+    const [rows, setRowsOption] = useState(null);
+
+    console.log(rows);
+
+    useEffect(() => {
+        if (rows) {
+            setTimeout(() => {
+                rows[0].expand();
+            }, 2500);
+
+            setTimeout(() => {
+                rows[0].close();
+            }, 5000);
+
+            setTimeout(() => {
+                rows[0].scrollIntoView();
+            }, 10000);
+        }
+    }, [rows]);
+
     return (
         <div>
             <h2 className="section-title">Component with CSS style override</h2>
 
             <div className="faq-style-wrapper">
-                <Faq data={data} />
+                <Faq data={data} getRowOptions={setRowsOption} />
             </div>
         </div>
     );

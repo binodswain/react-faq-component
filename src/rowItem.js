@@ -9,11 +9,13 @@ export default class rowItem extends PureComponent {
         config: PropTypes.object,
         data: PropTypes.object,
         rowid: PropTypes.number,
+        getRowOptions: PropTypes.func,
     };
 
     state = {
         isExpanded: false,
         ref: React.createRef(),
+        rowRef: React.createRef(),
         height: 0,
         rowClassName: "closed",
     };
@@ -55,6 +57,35 @@ export default class rowItem extends PureComponent {
         }
     }
 
+    componentDidMount() {
+        const { rowRef } = this.state;
+
+        if (this.props.getRowOptions) {
+            const options = {
+                expand: () => {
+                    this.toggle(true);
+                },
+                close: () => {
+                    this.toggle(false);
+                },
+                scrollIntoView: (opt) => {
+                    if (opt) {
+                        rowRef.current.scrollIntoView(opt);
+                    } else {
+                        rowRef.current.scrollIntoView();
+                    }
+                },
+            };
+            this.props.getRowOptions(options);
+        }
+    }
+
+    toggle = (flag) => {
+        this.setState(() => {
+            return { isExpanded: flag };
+        });
+    };
+
     expand = () => {
         this.setState((prevState) => {
             return { isExpanded: !prevState.isExpanded };
@@ -90,7 +121,7 @@ export default class rowItem extends PureComponent {
             config: { animate = true, arrowIcon, tabFocus = false } = {},
         } = this.props;
 
-        const { isExpanded, ref, height, rowClassName } = this.state;
+        const { isExpanded, ref, height, rowClassName, rowRef } = this.state;
 
         const attrs = {
             onClick: this.expand,
@@ -153,7 +184,7 @@ export default class rowItem extends PureComponent {
             );
 
         return (
-            <section className={`faq-row ${style["faq-row"]}`} role="listitem">
+            <section className={`faq-row ${style["faq-row"]}`} role="listitem" ref={rowRef}>
                 <div className={className} {...attrs}>
                     <div className={`row-title-text ${style["row-title-text"]}`}>{title}</div>
                     <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">

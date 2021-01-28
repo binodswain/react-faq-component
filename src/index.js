@@ -8,7 +8,18 @@ export default class FaqComponent extends PureComponent {
         data: PropTypes.object,
         styles: PropTypes.object,
         config: PropTypes.object,
+        getRowOptions: PropTypes.func,
     };
+
+    state = {
+        rowsOption: [],
+    };
+
+    componentDidMount() {
+        if (this.props.getRowOptions) {
+            this.props.getRowOptions(this.state.rowsOption);
+        }
+    }
 
     render() {
         const { title, rows = [] } = this.props.data || {};
@@ -51,6 +62,10 @@ export default class FaqComponent extends PureComponent {
                                     key={i}
                                     rowid={i + 1}
                                     config={this.props.config}
+                                    getRowOptions={(options) =>
+                                        // eslint-disable-next-line react/no-direct-mutation-state
+                                        (this.state.rowsOption[i] = options)
+                                    }
                                 />
                             );
                         })}
