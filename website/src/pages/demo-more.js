@@ -6,6 +6,7 @@ import Footer from "../components/footer"
 import Faq from "react-faq-component"
 import Prism from "prismjs"
 import { Fragment } from "react"
+import FaqExternal from "../components/faqToggleOption"
 
 const data = {
   title: "FAQ (How it works)",
@@ -189,6 +190,38 @@ const IndexPage = () => {
               tabFocus: true,
             }}
           />
+
+          <h2>View 6 (with custom transition and tabFocus):</h2>
+          <pre>
+            <code className="language-jsx">{`export default function App() {
+    const [rows, setRowsOption] = useState(null);
+
+    useEffect(() => {
+        if (rows) {
+            setTimeout(() => {
+                rows[0].expand();
+            }, 2500);
+
+            setTimeout(() => {
+                rows[0].close();
+            }, 5000);
+
+            setTimeout(() => {
+                rows[0].scrollIntoView();
+            }, 10000);
+        }
+    }, [rows]);
+
+    return (
+        <div>
+          <Faq data={data} getRowOptions={setRowsOption} />
+        </div>
+    );
+}
+
+            `}</code>
+          </pre>
+          <FaqExternal />
         </section>
       </Layout>
       <Footer />
