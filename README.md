@@ -17,7 +17,7 @@ npm install --save react-faq-component
 ## Usage
 
 ```jsx
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 
 const data = {
@@ -63,14 +63,17 @@ const config = {
     // tabFocus: true
 };
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <Faq data={data} styles={styles} config={config} />
-            </div>
-        );
-    }
+export default function App {
+
+    return (
+        <div>
+            <Faq
+                data={data}
+                styles={styles}
+                config={config}
+            />
+        </div>
+    );
 }
 ```
 
@@ -82,7 +85,6 @@ The data passed to react-faq-component is an object having below keys(mentioned 
 | --------- | :----: | :------: | :---------------------------------------------------- |
 | title     | String |   true   | Text displayed as the title/header of the FAQ section |
 | rows      | Array  |   true   | Array of obj containing title and content of each row |
-| styles    | Object |   true   | Object that updates default text/bg color             |
 
 ## `config` props (optional)
 
@@ -170,6 +172,60 @@ If the above style options are not enough, you can write you own custom css to a
 [Example with css style](/example/src/with-css-override)
 
 These classnames are applied to the elements and do not contain any styles.
+
+## `getRowOptions` props (optional)
+
+A function is passed as a value to getRowOptions prop, which gets called with an array parameter. The length of the array is the same as the number of rows present in FAQ data. 3 functions in an object are exported per row to toggle and scrollTntoView.
+
+```js
+[
+    // option for first row item
+    {
+        close: () => {},
+        expand: () => {},
+        scrollIntoView: (option) => {}, // option values : https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#parameters
+    },
+    {...},
+    {...},
+    {...},
+];
+```
+
+**Example:**
+
+```jsx
+export default function SampleFaqApp() {
+    const [rows, setRowsOption] = useState(null);
+
+    useEffect(() => {
+        if (rows) {
+            setTimeout(() => {
+                rows[0].expand();
+            }, 2500);
+
+            setTimeout(() => {
+                rows[0].close();
+            }, 5000);
+
+            setTimeout(() => {
+                rows[0].scrollIntoView();
+                // rows[0].scrollIntoView(true);
+            }, 10000);
+        }
+    }, [rows]);
+
+    return (
+        <div>
+            <h2 className="section-title">FAQ section</h2>
+
+            <div className="faq-style-wrapper">
+                <Faq data={data} getRowOptions={setRowsOption} />
+            </div>
+        </div>
+    );
+```
+
+Note: On accessing invalid array index, an error will be logged in console.
 
 ## Screenshot
 
