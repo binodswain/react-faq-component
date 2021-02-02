@@ -6,9 +6,9 @@
             n.r(t);
             const a = n("q1tI"),
                 i = n.n(a),
-                s = n("Bl7J"),
-                o = n("vrFN"),
-                r = n("TwNY"),
+                o = n("Bl7J"),
+                r = n("vrFN"),
+                s = n("TwNY"),
                 l = n("W/9C"),
                 u = n("tHFp"),
                 m = n("jHpe"),
@@ -47,47 +47,53 @@
                 const e = Object(a.useState)(null),
                     t = e[0],
                     n = e[1],
-                    s = Object(a.useState)(!1),
-                    o = s[0],
-                    r = s[1];
-                return (
-                    Object(a.useEffect)(
-                        function () {
-                            t &&
-                                (setTimeout(function () {
-                                    t[0].expand();
-                                }, 2500),
-                                setTimeout(function () {
-                                    t[0].close();
-                                }, 5e3),
-                                setTimeout(function () {
-                                    t[0].scrollIntoView();
-                                }, 1e4));
-                        },
-                        [t],
-                    ),
-                    Object(a.useEffect)(function () {
-                        new IntersectionObserver(
-                            function (e, t) {
-                                o ||
-                                    e.forEach(function (e) {
-                                        e.intersectionRatio > 0 && r(!0);
-                                    });
-                            },
-                            { root: null, rootMargin: "0px", threshold: 1 },
-                        ).observe(document.getElementById("external-toggle"));
-                    }, []),
+                    o = Object(a.useState)(0),
+                    r = o[0],
+                    s = o[1];
+                return i.a.createElement(
+                    "div",
+                    { id: "external-toggle" },
                     i.a.createElement(
                         "div",
-                        { id: "external-toggle" },
-                        o
-                            ? i.a.createElement(
-                                "div",
-                                null,
-                                i.a.createElement(u.a, { data: d, getRowOptions: n }),
-                            )
-                            : null,
-                    )
+                        { className: "row-option" },
+                        i.a.createElement("label", { htmlFor: "rownum" }, "Enter row number:"),
+                        i.a.createElement("input", {
+                            type: "number",
+                            id: "rownum",
+                            value: r,
+                            onChange: function (e) {
+                                return s(e.target.value);
+                            },
+                            min: "0",
+                            max: "3",
+                            disabled: !t,
+                        }),
+                        i.a.createElement(
+                            "button",
+                            {
+                                type: "button",
+                                onClick: function () {
+                                    t && t[r].expand();
+                                },
+                            },
+                            "Exapnd row",
+                        ),
+                        i.a.createElement(
+                            "button",
+                            {
+                                type: "button",
+                                onClick: function () {
+                                    t && t[r].close();
+                                },
+                            },
+                            "Close row",
+                        ),
+                    ),
+                    i.a.createElement(
+                        "div",
+                        null,
+                        i.a.createElement(u.a, { data: d, getRowOptions: n }),
+                    ),
                 );
             }
             const g = {
@@ -121,10 +127,10 @@
                         a.Fragment,
                         null,
                         i.a.createElement(
-                            s.a,
+                            o.a,
                             null,
-                            i.a.createElement(o.a, { title: "More demos" }),
-                            i.a.createElement(r.a, null),
+                            i.a.createElement(r.a, { title: "More demos" }),
+                            i.a.createElement(s.a, null),
                             i.a.createElement("h1", null, "More Demos"),
                             i.a.createElement(
                                 "section",
@@ -236,18 +242,14 @@
                                     styles: { transitionDuration: "2.5s", timingFunc: "linear" },
                                     config: { tabFocus: !0 },
                                 }),
-                                i.a.createElement(
-                                    "h2",
-                                    null,
-                                    "View 6 (with custom transition and tabFocus):",
-                                ),
+                                i.a.createElement("h2", null, "View 6 (with external row toggle):"),
                                 i.a.createElement(
                                     "pre",
                                     null,
                                     i.a.createElement(
                                         "code",
                                         { className: "language-jsx" },
-                                        "export default function App() {\n    const [rows, setRowsOption] = useState(null);\n\n    useEffect(() => {\n        if (rows) {\n            setTimeout(() => {\n                rows[0].expand();\n            }, 2500);\n\n            setTimeout(() => {\n                rows[0].close();\n            }, 5000);\n\n            setTimeout(() => {\n                rows[0].scrollIntoView();\n            }, 10000);\n        }\n    }, [rows]);\n\n    return (\n        <div>\n          <Faq data={data} getRowOptions={setRowsOption} />\n        </div>\n    );\n}\n\n            ",
+                                        'export default function App() {\n    const [rows, setRowsOption] = useState(null)\n    const [row, setRow] = useState(0)\n  \n    const expand = () => {\n        rows && rows[row].expand()\n    }\n  \n    const close = () => {\n        rows && rows[row].close()\n    }\n\n    return (\n        <div>\n            <Faq data={data} getRowOptions={setRowsOption} />\n\n            <div className="row-option">\n                <label htmlFor="rownum">Enter row number:</label>\n                <input type="number" id="rownum"\n                    value={row} onChange={e => setRow(e.target.value)}\n                    min="0" max="3" disabled={!rows}\n                />\n                <button type="button" onClick={expand}>\n                    Exapnd row\n                </button>\n\n                <button type="button" onClick={close}>\n                    Close row\n                </button>\n            </div>\n        </div>\n    );\n}\n\n            ',
                                     ),
                                 ),
                                 i.a.createElement(p, null),
@@ -260,4 +262,4 @@
         },
     },
 ]);
-//# sourceMappingURL=component---src-pages-demo-more-js-f7dde2d59c1d109d892c.js.map
+//# sourceMappingURL=component---src-pages-demo-more-js-49fa05d97992b1e4c641.js.map
