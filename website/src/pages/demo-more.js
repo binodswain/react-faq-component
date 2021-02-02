@@ -191,30 +191,38 @@ const IndexPage = () => {
             }}
           />
 
-          <h2>View 6 (with custom transition and tabFocus):</h2>
+          <h2>View 6 (with external row toggle):</h2>
           <pre>
             <code className="language-jsx">{`export default function App() {
-    const [rows, setRowsOption] = useState(null);
-
-    useEffect(() => {
-        if (rows) {
-            setTimeout(() => {
-                rows[0].expand();
-            }, 2500);
-
-            setTimeout(() => {
-                rows[0].close();
-            }, 5000);
-
-            setTimeout(() => {
-                rows[0].scrollIntoView();
-            }, 10000);
-        }
-    }, [rows]);
+    const [rows, setRowsOption] = useState(null)
+    const [row, setRow] = useState(0)
+  
+    const expand = () => {
+        rows && rows[row].expand()
+    }
+  
+    const close = () => {
+        rows && rows[row].close()
+    }
 
     return (
         <div>
-          <Faq data={data} getRowOptions={setRowsOption} />
+            <Faq data={data} getRowOptions={setRowsOption} />
+
+            <div className="row-option">
+                <label htmlFor="rownum">Enter row number:</label>
+                <input type="number" id="rownum"
+                    value={row} onChange={e => setRow(e.target.value)}
+                    min="0" max="3" disabled={!rows}
+                />
+                <button type="button" onClick={expand}>
+                    Exapnd row
+                </button>
+
+                <button type="button" onClick={close}>
+                    Close row
+                </button>
+            </div>
         </div>
     );
 }

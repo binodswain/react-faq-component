@@ -47,24 +47,7 @@ const data = {
 
 export default function WithCssStyleComp() {
     const [rows, setRowsOption] = useState(null);
-
-    console.log(rows);
-
-    useEffect(() => {
-        if (rows) {
-            setTimeout(() => {
-                rows[0].expand();
-            }, 2500);
-
-            setTimeout(() => {
-                rows[0].close();
-            }, 5000);
-
-            setTimeout(() => {
-                rows[0].scrollIntoView();
-            }, 10000);
-        }
-    }, [rows]);
+    const [row, setRow] = useState(0);
 
     return (
         <div>
@@ -72,6 +55,22 @@ export default function WithCssStyleComp() {
 
             <div className="faq-style-wrapper">
                 <Faq data={data} getRowOptions={setRowsOption} />
+            </div>
+
+            <div className="row-option">
+                <label htmlFor="rownum">Enter row number:</label>
+                <input type="number" name="rownum"  id="rownum" value={row} onChange={(e)=>setRow(e.target.value)} min="0" max="3" disabled={!rows}/>
+                <button type="button" onClick={()=>{
+                    rows && rows[row].expand()
+                }}>
+                    Exapnd row
+                </button>
+
+                <button type="button" onClick={()=>{
+                    rows && rows[row].close()
+                }}>
+                    Close row
+                </button>
             </div>
         </div>
     );
