@@ -45,52 +45,41 @@ const data = {
 
 export default function App() {
   const [rows, setRowsOption] = useState(null)
-  const [show, setShow] = useState(false)
+  const [row, setRow] = useState(0)
 
-  useEffect(() => {
-    if (rows) {
-      setTimeout(() => {
-        rows[0].expand()
-      }, 2500)
+  const expand = () => {
+    rows && rows[row].expand()
+  }
 
-      setTimeout(() => {
-        rows[0].close()
-      }, 5000)
-
-      setTimeout(() => {
-        rows[0].scrollIntoView()
-      }, 10000)
-    }
-  }, [rows])
-
-  useEffect(() => {
-    function onChange(changes, observer) {
-      if (!show) {
-        changes.forEach(change => {
-          if (change.intersectionRatio > 0) {
-            setShow(true)
-          }
-        })
-      }
-    }
-
-    let options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 1.0,
-    }
-
-    let observer = new IntersectionObserver(onChange, options)
-    observer.observe(document.getElementById("external-toggle"))
-  }, [])
+  const close = () => {
+    rows && rows[row].close()
+  }
 
   return (
     <div id="external-toggle">
-      {show ? (
-        <div>
-          <Faq data={data} getRowOptions={setRowsOption} />
-        </div>
-      ) : null}
+      <div className="row-option">
+        <label htmlFor="rownum">Enter row number:</label>
+        <input
+          type="number"
+          id="rownum"
+          value={row}
+          onChange={e => setRow(e.target.value)}
+          min="0"
+          max="3"
+          disabled={!rows}
+        />
+        <button type="button" onClick={expand}>
+          Exapnd row
+        </button>
+
+        <button type="button" onClick={close}>
+          Close row
+        </button>
+      </div>
+
+      <div>
+        <Faq data={data} getRowOptions={setRowsOption} />
+      </div>
     </div>
   )
 }
