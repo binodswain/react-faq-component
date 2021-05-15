@@ -186,7 +186,12 @@ export default class rowItem extends PureComponent {
         return (
             <section className={`faq-row ${style["faq-row"]}`} role="listitem" ref={rowRef}>
                 <div className={className} {...attrs}>
-                    <div className={`row-title-text ${style["row-title-text"]}`}>{title}</div>
+                    <div
+                        className={`row-title-text ${style["row-title-text"]}`}
+                        id={`react-faq-rowtitle-${this.props.rowid}`}
+                    >
+                        {title}
+                    </div>
                     <span className={`icon-wrapper ${style["icon-wrapper"]}`} aria-hidden="true">
                         {icon}
                     </span>
