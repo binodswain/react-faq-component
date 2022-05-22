@@ -107,7 +107,7 @@ export default class WithStyleComp extends Component {
                             titleTextColor: "green",
                             rowContentColor: "grey",
                         }}
-                        config={config}
+                        config={{ ...config, expandIcon: "+", collapseIcon: "-" }}
                     />
                     <br />
                     <br />
