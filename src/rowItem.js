@@ -10,6 +10,7 @@ export default class rowItem extends PureComponent {
         data: PropTypes.object,
         rowid: PropTypes.number,
         getRowOptions: PropTypes.func,
+        openOnload: PropTypes.bool,
     };
 
     state = {
@@ -59,6 +60,9 @@ export default class rowItem extends PureComponent {
 
     componentDidMount() {
         const { rowRef } = this.state;
+        if (this.props.openOnload) {
+            this.expand();
+        }
 
         if (this.props.getRowOptions) {
             const options = {

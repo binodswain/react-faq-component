@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Faq from "react-faq-component";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const data = {
     title: "FAQ (How it works)",
@@ -78,7 +78,7 @@ export default class WithStyleComp extends Component {
         return (
             <div>
                 <h2 className="section-title">Component with style parameter</h2>
-        
+
                 <div>
                     <Faq
                         data={data}
@@ -143,7 +143,20 @@ export default class WithStyleComp extends Component {
                             rowContentColor: "grey",
                         }}
                         config={config}
-                        />
+                    />
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <Faq
+                        data={data}
+                        styles={{
+                            titleTextColor: "red",
+                            rowContentColor: "red",
+                        }}
+                        config={{ ...config, openOnload: 0 }}
+                    />
                 </div>
             </div>
         );
