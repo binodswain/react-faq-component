@@ -93,17 +93,23 @@ const config = {
     animate: true,
     arrowIcon: "V",
     openOnload: 0,
+    expandIcon: "+",
+    collapseIcon: "-",
 };
 ```
 
 The config passed to react-faq-component is an object having below keys(mentioned in the table).
 
-| attribute  |    type    | optional | details                                                                                                                                      |
-| ---------- | :--------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| animate    |  Boolean   |   true   | Whether to enable the (row) content animation (default val : true)                                                                           |
-| arrowIcon  | JSX/string |   true   | Custom component to display instead of default arrow                                                                                         |
-| tabFocus   |  Boolean   |   true   | Whether to add outline on tab focus (default val : false). Focus outline is added when keyboard tab is used to navigate through the contents |
-| openOnload |  Boolean   |   true   | Index of the row to expand onload (0 for first row)                                                                                          |
+| attribute    |    type    | optional | details                                                                                                                                      |
+| ------------ | :--------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| animate      |  Boolean   |   true   | Whether to enable the (row) content animation (default val : true)                                                                           |
+| arrowIcon    | JSX/string |   true   | Custom component to display instead of default arrow                                                                                         |
+| tabFocus     |  Boolean   |   true   | Whether to add outline on tab focus (default val : false). Focus outline is added when keyboard tab is used to navigate through the contents |
+| openOnload   |  Boolean   |   true   | Index of the row to expand onload (0 for first row)                                                                                          |
+| expandIcon   |   string   |   true   | Text to Show when row is collapsed (collapseIcon is required).                                                                               |
+| collapseIcon |   string   |   true   | Text to Show when row is expanded                                                                                                            |
+
+Note: `arrowIcon` is not displayed if `expandIcon` and `collapseIcon` is provided.
 
 ## `styles` props format
 

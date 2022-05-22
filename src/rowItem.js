@@ -122,7 +122,7 @@ export default class rowItem extends PureComponent {
     render() {
         const {
             data: { title, content },
-            config: { animate = true, arrowIcon, tabFocus = false } = {},
+            config: { animate = true, arrowIcon, expandIcon, collapseIcon, tabFocus = false } = {},
         } = this.props;
 
         const { isExpanded, ref, height, rowClassName, rowRef } = this.state;
@@ -165,13 +165,19 @@ export default class rowItem extends PureComponent {
             .filter(Boolean)
             .join(" ");
 
-        const icon = arrowIcon || (
-            <div
-                dangerouslySetInnerHTML={{ __html: arrow_down }}
-                className={`arrow-image ${style["arrow-image"]}`}
-                alt="Expand arrow"
-            />
-        );
+        const customIcon = expandIcon && collapseIcon;
+        let icon = null;
+        if (customIcon) {
+            icon = isExpanded ? collapseIcon : expandIcon;
+        } else {
+            icon = arrowIcon || (
+                <div
+                    dangerouslySetInnerHTML={{ __html: arrow_down }}
+                    className={`arrow-image ${style["arrow-image"]}`}
+                    alt="Expand arrow"
+                />
+            );
+        }
 
         const contentClasses = [
             style["row-content"],
