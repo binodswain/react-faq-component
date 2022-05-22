@@ -92,16 +92,18 @@ The data passed to react-faq-component is an object having below keys(mentioned 
 const config = {
     animate: true,
     arrowIcon: "V",
+    openOnload: 0,
 };
 ```
 
 The config passed to react-faq-component is an object having below keys(mentioned in the table).
 
-| attribute |    type    | optional | details                                                                                                                                      |
-| --------- | :--------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| animate   |  Boolean   |   true   | Whether to enable the (row) content animation (default val : true)                                                                           |
-| arrowIcon | JSX/string |   true   | Custom component to display instead of default arrow                                                                                         |
-| tabFocus  |  Boolean   |   true   | Whether to add outline on tab focus (default val : false). Focus outline is added when keyboard tab is used to navigate through the contents |
+| attribute  |    type    | optional | details                                                                                                                                      |
+| ---------- | :--------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| animate    |  Boolean   |   true   | Whether to enable the (row) content animation (default val : true)                                                                           |
+| arrowIcon  | JSX/string |   true   | Custom component to display instead of default arrow                                                                                         |
+| tabFocus   |  Boolean   |   true   | Whether to add outline on tab focus (default val : false). Focus outline is added when keyboard tab is used to navigate through the contents |
+| openOnload |  Boolean   |   true   | Index of the row to expand onload (0 for first row)                                                                                          |
 
 ## `styles` props format
 

@@ -23,7 +23,7 @@ export default class FaqComponent extends PureComponent {
 
     render() {
         const { title, rows = [] } = this.props.data || {};
-        const { styles = {}, config: { animate } = {} } = this.props;
+        const { styles = {}, config: { animate, openOnload } = {} } = this.props;
 
         const styleConfig = {
             "--faq-bg-color": styles.bgColor,
@@ -58,6 +58,7 @@ export default class FaqComponent extends PureComponent {
                         {rows.map((row, i) => {
                             return (
                                 <FaqRow
+                                    openOnload={openOnload === i}
                                     data={row}
                                     key={i}
                                     rowid={i + 1}
